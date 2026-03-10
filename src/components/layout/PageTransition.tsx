@@ -1,0 +1,15 @@
+import { motion } from 'motion/react'
+
+export function PageTransition({ children }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -16 }}
+      transition={{ duration: 0.4, ease: 'easeInOut' }}
+      className="flex flex-col min-h-screen"
+    >
+      {children}
+    </motion.div>
+  )
+}
