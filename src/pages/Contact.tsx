@@ -11,7 +11,7 @@ import {
 } from "../lib/animations";
 import { Phone, Mail, MapPin, Clock, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import EnquiryForm from "../components/EnquiryForm";
+import EnquiryForm from "@/components/EnquiryForm";
 
 const faqs = [
   {

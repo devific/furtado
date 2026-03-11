@@ -1,4 +1,4 @@
-import { PageTransition } from "../components/layout/PageTransition";
+import { PageTransition } from "@/components/layout/PageTransition";
 import { motion } from "motion/react";
 import { fadeUp } from "../lib/animations";
 

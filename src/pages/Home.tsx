@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { PageTransition } from "../components/layout/PageTransition";
+import { PageTransition } from "@/components/layout/PageTransition";
 import {
   fadeUp,
   staggerContainer,
@@ -20,12 +20,12 @@ import {
   Sparkles,
   ShieldCheck,
 } from "lucide-react";
-import { AnimatedHeading } from "../components/ui/AnimatedHeading";
+import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import { Button } from "@/components/ui/button";
-import { ParallaxSection } from "../components/ui/ParallaxSection";
-import { VillaCard } from "../components/ui/VillaCard";
-import { FeatureCard } from "../components/ui/FeatureCard";
-import { CountUp } from "../components/ui/CountUp";
+import { ParallaxSection } from "@/components/ui/ParallaxSection";
+import { VillaCard } from "@/components/ui/VillaCard";
+import { FeatureCard } from "@/components/ui/FeatureCard";
+import { CountUp } from "@/components/ui/CountUp";
 import { villaData } from "../data/villas";
 
 const highlights = [

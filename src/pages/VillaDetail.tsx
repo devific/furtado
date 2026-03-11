@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { PageTransition } from "../components/layout/PageTransition";
-import { AnimatedHeading } from "../components/ui/AnimatedHeading";
+import { PageTransition } from "@/components/layout/PageTransition";
+import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import { Button } from "@/components/ui/button";
 import {
   fadeUp,

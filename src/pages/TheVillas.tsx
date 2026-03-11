@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
-import { AnimatedHeading } from "../components/ui/AnimatedHeading";
+import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import { Button } from "@/components/ui/button";
-import { ParallaxSection } from "../components/ui/ParallaxSection";
-import { PageTransition } from "../components/layout/PageTransition";
+import { ParallaxSection } from "@/components/ui/ParallaxSection";
+import { PageTransition } from "@/components/layout/PageTransition";
 import {
   fadeUp,
   slideLeft,

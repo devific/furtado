@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { AnimatedHeading } from "../components/ui/AnimatedHeading";
-import { PageTransition } from "../components/layout/PageTransition";
+import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { PageTransition } from "@/components/layout/PageTransition";
 import { fadeUp, staggerContainer, scaleUp } from "../lib/animations";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
