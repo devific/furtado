@@ -77,7 +77,11 @@ export default function EnquiryForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="name">Full Name</Label>
-          <Input {...register("name")} placeholder="Full Name" />
+          <Input
+            className="bg-white"
+            {...register("name")}
+            placeholder="Full Name"
+          />
           {errors.name && (
             <p className="text-sm text-red-500">{errors.name.message}</p>
           )}
@@ -86,6 +90,7 @@ export default function EnquiryForm() {
         <div className="space-y-2">
           <Label htmlFor="email">Email Address</Label>
           <Input
+            className="bg-white"
             type="email"
             {...register("email")}
             placeholder="Email Address"
@@ -101,7 +106,12 @@ export default function EnquiryForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label>Phone Number</Label>
-          <Input type="tel" {...register("phone")} placeholder="Phone Number" />
+          <Input
+            className="bg-white"
+            type="tel"
+            {...register("phone")}
+            placeholder="Phone Number"
+          />
           {errors.phone && (
             <p className="text-sm text-red-500">{errors.phone.message}</p>
           )}
@@ -110,6 +120,7 @@ export default function EnquiryForm() {
         <div className="space-y-2">
           <Label>Number of Guests</Label>
           <Input
+            className="bg-white"
             type="number"
             {...register("guests", { valueAsNumber: true })}
           />
@@ -124,7 +135,7 @@ export default function EnquiryForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label>Check-in Date</Label>
-          <Input type="date" {...register("checkin")} />
+          <Input className="bg-white" type="date" {...register("checkin")} />
           {errors.checkin && (
             <p className="text-sm text-red-500">{errors.checkin.message}</p>
           )}
@@ -132,7 +143,7 @@ export default function EnquiryForm() {
 
         <div className="space-y-2">
           <Label>Check-out Date</Label>
-          <Input type="date" {...register("checkout")} />
+          <Input className="bg-white" type="date" {...register("checkout")} />
           {errors.checkout && (
             <p className="text-sm text-red-500">{errors.checkout.message}</p>
           )}
@@ -146,7 +157,7 @@ export default function EnquiryForm() {
           <Label>Villa Preference</Label>
 
           <Select onValueChange={(v) => setValue("villa", v)}>
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full bg-white">
               <SelectValue placeholder="Select Villa">
                 {getLabel(villaValue, villaOptions)}
               </SelectValue>
@@ -170,7 +181,7 @@ export default function EnquiryForm() {
           <Label>Occasion</Label>
 
           <Select onValueChange={(v) => setValue("occasion", v)}>
-            <SelectTrigger className="w-full">
+            <SelectTrigger className="w-full bg-white">
               <SelectValue placeholder="Occasion (Optional)">
                 {getLabel(occasionValue, occasionOptions)}
               </SelectValue>
