@@ -10,6 +10,7 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+
   const isActive = (path: string) =>
     path === "/"
       ? location.pathname === "/"
@@ -19,6 +20,7 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -51,6 +53,7 @@ export function Navbar() {
         )}
       >
         <div className="w-full max-w-[1400px] mx-auto px-5 md:px-10 flex items-center justify-between">
+          {/* Logo */}
           <Link
             to="/"
             className={cn(
@@ -63,7 +66,7 @@ export function Navbar() {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => {
               const active = isActive(link.path);
@@ -113,11 +116,11 @@ export function Navbar() {
           <div className="flex gap-2 items-center">
             {/* Mobile CTA */}
             <Button
-              to="/contact"
+              asChild
               variant={isTransparent ? "outlineWhite" : "secondary"}
               className="rounded-full px-6 py-2.5 text-sm font-medium hidden cursor-pointer"
             >
-              Plan Your Stay →
+              <Link to="/contact">Plan Your Stay →</Link>
             </Button>
 
             {/* Mobile Menu Toggle */}
@@ -184,8 +187,8 @@ export function Navbar() {
             </motion.div>
 
             <div className="mt-auto">
-              <Button to="/contact" className="w-full">
-                Plan Your Stay →
+              <Button asChild className="w-full">
+                <Link to="/contact">Plan Your Stay →</Link>
               </Button>
             </div>
           </motion.div>
