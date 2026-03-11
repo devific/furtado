@@ -12,7 +12,7 @@ import {
   scaleUp,
 } from "../lib/animations";
 import { ChefHat, Flame, Waves, Sunset, Star, Moon } from "lucide-react";
-import { Button } from "../components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 export function Experiences() {
   return (

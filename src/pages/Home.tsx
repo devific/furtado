@@ -21,7 +21,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { AnimatedHeading } from "../components/ui/AnimatedHeading";
-import { Button } from "../components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { ParallaxSection } from "../components/ui/ParallaxSection";
 import { VillaCard } from "../components/ui/VillaCard";
 import { FeatureCard } from "../components/ui/FeatureCard";

@@ -10,7 +10,7 @@ import {
   scaleUp,
 } from "../lib/animations";
 import { Phone, Mail, MapPin, Clock, ChevronDown } from "lucide-react";
-import { Button } from "../components/ui/Button";
+import { Button } from "@/components/ui/button";
 import EnquiryForm from "../components/EnquiryForm";
 
 const faqs = [
