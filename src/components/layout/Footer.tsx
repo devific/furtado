@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 export function Footer() {
   return (
@@ -10,18 +10,33 @@ export function Footer() {
             <div className="flex items-center gap-1 text-white mb-2">
               <span className="font-bold text-xl">Furtado's Hospitality</span>
             </div>
-            <p className="text-white/50 text-sm mt-2">Your Private Goa, Finally.</p>
-            <p className="text-white/40 text-xs mt-1">Porvorim, North Goa, India</p>
+            <p className="text-white/50 text-sm mt-2">
+              Your Private Goa, Finally.
+            </p>
+            <p className="text-white/40 text-xs mt-1">
+              Porvorim, North Goa, India
+            </p>
           </div>
 
           {/* Col 2 */}
           <div>
             <h4 className="text-white font-semibold mb-4">Navigate</h4>
             <ul className="space-y-2">
-              {['Home', 'The Villas', 'Pool & Grounds', 'Experiences', 'Gallery', 'Contact'].map((item) => (
+              {[
+                "Home",
+                "The Villas",
+                "Pool & Grounds",
+                "Experiences",
+                "Gallery",
+                "Contact",
+              ].map((item) => (
                 <li key={item}>
-                  <Link 
-                    to={item === 'Home' ? '/' : `/${item.toLowerCase().replace(/ & /g, '-and-').replace(/ /g, '-')}`}
+                  <Link
+                    to={
+                      item === "Home"
+                        ? "/"
+                        : `/${item.toLowerCase().replace(/ & /g, "-and-").replace(/ /g, "-")}`
+                    }
                     className="text-white/60 hover:text-white text-sm transition-colors"
                   >
                     {item}
@@ -35,9 +50,25 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Book Direct</h4>
             <ul className="space-y-2">
-              <li><a href="tel:+919876543210" className="text-white/60 hover:text-white text-sm transition-colors">+91 98765 43210</a></li>
-              <li><a href="mailto:hello@familiafurtado.com" className="text-white/60 hover:text-white text-sm transition-colors">hello@familiafurtado.com</a></li>
-              <li className="text-white/40 text-xs mt-4">Available year-round</li>
+              <li>
+                <a
+                  href="tel:+919876543210"
+                  className="text-white/60 hover:text-white text-sm transition-colors"
+                >
+                  +91 98765 43210
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:hello@furtadohospitality.com"
+                  className="text-white/60 hover:text-white text-sm transition-colors"
+                >
+                  hello@furtadohospitality.com
+                </a>
+              </li>
+              <li className="text-white/40 text-xs mt-4">
+                Available year-round
+              </li>
             </ul>
           </div>
 
@@ -45,21 +76,50 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Also available on</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-white/60 hover:text-white text-sm transition-colors underline">Airbnb</a></li>
-              <li><a href="#" className="text-white/60 hover:text-white text-sm transition-colors underline">Booking.com</a></li>
-              <li className="text-white/40 text-xs mt-4">Direct bookings get priority response</li>
+              <li>
+                <a
+                  href="#"
+                  className="text-white/60 hover:text-white text-sm transition-colors underline"
+                >
+                  Airbnb
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-white/60 hover:text-white text-sm transition-colors underline"
+                >
+                  Booking.com
+                </a>
+              </li>
+              <li className="text-white/40 text-xs mt-4">
+                Direct bookings get priority response
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/50 text-xs">© {new Date().getFullYear()} Furtado's Hospitality. All rights reserved.</p>
+          <p className="text-white/50 text-xs">
+            © {new Date().getFullYear()} Furtado's Hospitality. All rights
+            reserved.
+          </p>
           <div className="flex gap-4">
-            <Link to="/privacy" className="text-white/50 hover:text-white text-xs transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="text-white/50 hover:text-white text-xs transition-colors">Terms</Link>
+            <Link
+              to="/privacy"
+              className="text-white/50 hover:text-white text-xs transition-colors"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms"
+              className="text-white/50 hover:text-white text-xs transition-colors"
+            >
+              Terms
+            </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

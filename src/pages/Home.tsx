@@ -106,18 +106,15 @@ export function Home() {
         >
           <motion.h1
             variants={fadeUp}
-            className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight !text-white mb-6 drop-shadow-lg"
+            className="text-4xl lg:text-5xl font-black leading-tight text-white mb-2 drop-shadow-lg"
           >
-            Secure Your Share of
-            <br />
-            Elite Property
+            Your Private Goa, Finally.
           </motion.h1>
           <motion.p
             variants={fadeUp}
-            className="text-base md:text-lg text-white/80 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
+            className="text-base text-white/80 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
           >
-            Access handpicked, high-value real estate across the globe—curated
-            for discerning investors seeking elevated returns and exclusivity.
+            Two Portuguese villas. One extraordinary address. Yours, entirely.
           </motion.p>
         </motion.div>
       </section>
@@ -138,7 +135,7 @@ export function Home() {
             <div className="space-y-6 text-brand-mid text-base leading-relaxed">
               <p>
                 At Furtado's Hospitality, we believe a home is more than bricks
-                and mortar—it's a personal sanctuary where life unfolds,
+                and mortar-it's a personal sanctuary where life unfolds,
                 memories are made, and peace finds its place.
               </p>
               <p>
@@ -301,7 +298,7 @@ export function Home() {
             Not a resort. Not a hotel. Yours, entirely.
           </h2>
           <p className="text-white/50 text-sm md:text-base">
-            Familia Furtado is a home — built with love, furnished with care,
+            Familia Furtado is a home - built with love, furnished with care,
             and waiting for you.
           </p>
         </motion.div>
@@ -332,7 +329,7 @@ export function Home() {
               Choose Your Escape
             </h2>
             <p className="text-base font-normal leading-relaxed text-brand-mid max-w-2xl">
-              Each villa is a self-contained retreat — identical in luxury,
+              Each villa is a self-contained retreat - identical in luxury,
               infinite in memory.
             </p>
           </motion.div>
@@ -373,7 +370,11 @@ export function Home() {
               Travelling as a larger group? Both villas can be rented together
               as a private compound for up to 12 guests.
             </p>
-            <Button to="/contact" variant="primary" className="shrink-0">
+            <Button
+              to="/contact"
+              variant="primary"
+              className="shrink-0 cursor-pointer"
+            >
               Book the Full Estate &rarr;
             </Button>
           </motion.div>
@@ -381,7 +382,7 @@ export function Home() {
       </section>
 
       <ParallaxSection
-        imageSrc="https://images.unsplash.com/photo-1576013551627-11dc368f0d47?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+        imageSrc="https://images.unsplash.com/photo-1543489822-c49534f3271f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
         className="min-h-[70vh] flex items-end"
       >
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
@@ -430,8 +431,8 @@ export function Home() {
             </div>
           </div>
 
-          <Button to="/pool-and-grounds" variant="outlineWhite">
-            Discover the Grounds &rarr;
+          <Button to="/pool" variant="outlineWhite" className="cursor-pointer">
+            Discover the Pool &rarr;
           </Button>
         </motion.div>
       </ParallaxSection>
@@ -521,7 +522,7 @@ export function Home() {
               <FeatureCard
                 icon={Waves}
                 title="The Pool & Jacuzzi"
-                body="A 14-metre private pool with 6 waterfalls and a 2-seater jacuzzi — yours for the entire stay."
+                body="A 14-metre private pool with 6 waterfalls and a 2-seater jacuzzi - yours for the entire stay."
               />
             </motion.div>
             <motion.div variants={fadeUp}>
@@ -549,7 +550,7 @@ export function Home() {
               <FeatureCard
                 icon={Sparkles}
                 title="Valley & Sea Views"
-                body="Every balcony frames something beautiful — pool, valley, or a sliver of the Arabian Sea."
+                body="Every balcony frames something beautiful - pool, valley, or a sliver of the Arabian Sea."
               />
             </motion.div>
             <motion.div variants={fadeUp}>
@@ -731,7 +732,7 @@ export function Home() {
             Ready to make it yours?
           </h2>
           <p className="text-white/60 text-lg max-w-lg mx-auto mb-10">
-            Check availability or simply get in touch. We respond personally —
+            Check availability or simply get in touch. We respond personally -
             no automated replies, no waiting rooms.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
