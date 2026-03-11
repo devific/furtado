@@ -23,7 +23,7 @@ export function PoolAndGrounds() {
           variants={staggerContainerSlow}
           initial="hidden"
           animate="visible"
-          className="relative z-10 text-center px-5 max-w-3xl mx-auto"
+          className="relative z-10 text-center px-5 max-w-3xl mx-auto py-2"
         >
           <AnimatedHeading
             text="The Pool"

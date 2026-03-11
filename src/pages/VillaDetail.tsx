@@ -13,6 +13,7 @@ import {
 } from "../lib/animations";
 import { villaData } from "../data/villas";
 import { ChevronLeft, ChevronRight, Check } from "lucide-react";
+import EnquiryForm from "@/components/EnquiryForm";
 
 const images = [
   "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
@@ -410,66 +411,7 @@ export function VillaDetail() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <form
-              className="bg-brand-surface rounded-2xl p-8 space-y-4"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-                <input
-                  type="number"
-                  placeholder="Number of Guests"
-                  min="1"
-                  max="12"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="date"
-                  placeholder="Check-in Date"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-                <input
-                  type="date"
-                  placeholder="Check-out Date"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-              </div>
-              <select className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200">
-                <option value="">Villa Preference</option>
-                <option value="villa-one">Villa One</option>
-                <option value="villa-two">Villa Two</option>
-                <option value="both">Both Villas (Full Estate)</option>
-                <option value="unsure">Not Sure</option>
-              </select>
-              <textarea
-                placeholder="Message or Special Requests"
-                className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 resize-none h-32"
-              ></textarea>
-              <Button type="submit" variant="primary" className="w-full">
-                Send Enquiry &rarr;
-              </Button>
-              <p className="text-xs text-brand-muted text-center mt-4">
-                We also list on Airbnb and Booking.com - links in the footer.
-              </p>
-            </form>
+            <EnquiryForm />
           </motion.div>
         </div>
       </section>

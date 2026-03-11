@@ -24,8 +24,8 @@ export function Footer() {
             <ul className="space-y-2">
               {[
                 "Home",
-                "The Villas",
-                "Pool & Grounds",
+                "Villas",
+                "Pool",
                 "Experiences",
                 "Gallery",
                 "Contact",

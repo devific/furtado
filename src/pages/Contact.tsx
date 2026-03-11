@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { AnimatedHeading } from "../components/ui/AnimatedHeading";
-import { PageTransition } from "../components/layout/PageTransition";
+import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
+import { PageTransition } from "@/components/layout/PageTransition";
 import {
   fadeUp,
   slideLeft,
@@ -11,6 +11,7 @@ import {
 } from "../lib/animations";
 import { Phone, Mail, MapPin, Clock, ChevronDown } from "lucide-react";
 import { Button } from "../components/ui/Button";
+import EnquiryForm from "../components/EnquiryForm";
 
 const faqs = [
   {
@@ -134,75 +135,7 @@ export function Contact() {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <form
-              className="bg-brand-surface rounded-2xl p-8 space-y-4"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="text"
-                  placeholder="Full Name"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="tel"
-                  placeholder="Phone Number"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-                <input
-                  type="number"
-                  placeholder="Number of Guests"
-                  min="1"
-                  max="12"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <input
-                  type="date"
-                  placeholder="Check-in Date"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-                <input
-                  type="date"
-                  placeholder="Check-out Date"
-                  className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200"
-                />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <select className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200">
-                  <option value="">Villa Preference</option>
-                  <option value="villa-one">Villa One</option>
-                  <option value="villa-two">Villa Two</option>
-                  <option value="both">Both Villas (Full Estate)</option>
-                  <option value="unsure">Not Sure</option>
-                </select>
-                <select className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200">
-                  <option value="">Occasion (Optional)</option>
-                  <option value="leisure">Leisure</option>
-                  <option value="wedding">Wedding Stay</option>
-                  <option value="anniversary">Anniversary</option>
-                  <option value="birthday">Birthday</option>
-                  <option value="family">Family Gathering</option>
-                  <option value="corporate">Corporate</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <textarea
-                placeholder="Message"
-                className="w-full bg-white border border-brand-rule rounded-xl px-5 py-3.5 text-sm text-brand-black placeholder:text-brand-muted focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/15 transition-all duration-200 resize-none h-32"
-              ></textarea>
-              <Button type="submit" variant="primary" className="w-full">
-                Send Enquiry &rarr;
-              </Button>
-            </form>
+            <EnquiryForm />
           </motion.div>
         </div>
       </section>

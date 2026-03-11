@@ -89,7 +89,7 @@ export function Home() {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover  object-[60%_center]"
         >
           <source
             src="https://ik.imagekit.io/devific/furtado/pool.mp4?updatedAt=1773174474223"
@@ -155,12 +155,12 @@ export function Home() {
           >
             <button
               onClick={prevSlide}
-              className="absolute left-0 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all"
+              className="cursor-pointer absolute left-0 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all"
             >
               <ArrowLeft size={18} className="text-brand-black" />
             </button>
 
-            <div className="absolute left-16 right-32 h-full z-10 overflow-hidden rounded-3xl shadow-2xl">
+            <div className="absolute max-lg:left-4 max-lg:right-4 lg:left-16 lg:right-32 h-full z-10 overflow-hidden rounded-3xl shadow-2xl">
               <AnimatePresence>
                 <motion.img
                   key={currentIndex}
@@ -184,7 +184,7 @@ export function Home() {
 
             <button
               onClick={nextSlide}
-              className="absolute right-12 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all"
+              className="cursor-pointer absolute right-0 lg:right-12 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all"
             >
               <ArrowRight size={18} className="text-brand-black" />
             </button>
@@ -689,7 +689,7 @@ export function Home() {
             </div>
             <div className="flex flex-wrap gap-3 mt-8">
               {[
-                "5 min to Porvorim Beach",
+                "5 min to Porvorim City",
                 "Portuguese Heritage",
                 "Valley Views",
                 "Lush Tropical Gardens",
@@ -731,18 +731,18 @@ export function Home() {
           <h2 className="text-4xl xl:text-5xl font-bold text-white mb-6">
             Ready to make it yours?
           </h2>
-          <p className="text-white/60 text-lg max-w-lg mx-auto mb-10">
+          <p className="text-white/60 text-lg mx-auto mb-10">
             Check availability or simply get in touch. We respond personally -
             no automated replies, no waiting rooms.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button to="/contact" variant="primary">
+          <div className="flex max-md:flex-col  gap-4 justify-center max-w-md mx-auto">
+            <Button to="/contact" variant="primary" className="w-full">
               Start the Conversation &rarr;
             </Button>
             <Button
               to="#"
               variant="outlineWhite"
-              className="border-white/20 text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
+              className="w-full border-white/20 text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
             >
               View on Airbnb
             </Button>

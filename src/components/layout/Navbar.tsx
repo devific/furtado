@@ -2,14 +2,18 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
-import { Button } from "../ui/Button";
-import { cn } from "../../lib/utils";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const isActive = (path: string) =>
+    path === "/"
+      ? location.pathname === "/"
+      : location.pathname.startsWith(path);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,10 +29,11 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "The Villas", path: "/villas" },
+    { name: "Villas", path: "/villas" },
     { name: "Pool", path: "/pool" },
     { name: "Experiences", path: "/experiences" },
     { name: "Gallery", path: "/gallery" },
+    { name: "Contact", path: "/contact" },
   ];
 
   const isTransparent = isHome && !scrolled && !mobileMenuOpen;
@@ -41,9 +46,7 @@ export function Navbar() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={cn(
           "fixed top-0 inset-x-0 z-50 h-20 transition-all duration-300 flex items-center",
-          isTransparent
-            ? "bg-transparent"
-            : "bg-white border-b border-brand-rule",
+          isTransparent ? "bg-black/5" : "bg-white border-b border-brand-rule",
           scrolled && !isTransparent ? "shadow-md" : "",
         )}
       >
@@ -62,39 +65,61 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-brand-accent",
-                  isTransparent
-                    ? "text-white/80 hover:text-white"
-                    : "text-brand-black",
-                )}
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isActive(link.path);
+
+              return (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={cn(
+                    "relative text-sm font-medium transition-colors",
+                    active
+                      ? isTransparent
+                        ? "text-white"
+                        : "text-brand-black"
+                      : isTransparent
+                        ? "text-white/70 hover:text-white"
+                        : "text-brand-black/70 hover:text-brand-black",
+                  )}
+                >
+                  {link.name}
+
+                  {active && (
+                    <motion.span
+                      layoutId="navbar-indicator"
+                      className={cn(
+                        "absolute left-0 -bottom-1 h-[2px] w-full",
+                        isTransparent ? "bg-white" : "bg-brand-accent",
+                      )}
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
+          {/* Desktop CTA */}
           <div className="hidden lg:block">
             <Button
-              to="/contact"
+              asChild
               variant={isTransparent ? "outlineWhite" : "secondary"}
               className="rounded-full px-6 py-2.5 text-sm font-medium"
             >
-              Plan Your Stay &rarr;
+              <Link to="/contact">Plan Your Stay →</Link>
             </Button>
           </div>
+
           <div className="flex gap-2 items-center">
+            {/* Mobile CTA */}
             <Button
               to="/contact"
               variant={isTransparent ? "outlineWhite" : "secondary"}
-              className="rounded-full px-6 py-2.5 text-sm font-medium lg:hidden cursor-pointer"
+              className="rounded-full px-6 py-2.5 text-sm font-medium hidden cursor-pointer"
             >
-              Plan Your Stay &rarr;
+              Plan Your Stay →
             </Button>
+
             {/* Mobile Menu Toggle */}
             <button
               className={cn(
@@ -113,7 +138,7 @@ export function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -131,26 +156,36 @@ export function Navbar() {
               animate="visible"
               className="flex flex-col gap-6 text-2xl font-bold"
             >
-              {navLinks.map((link) => (
-                <motion.div
-                  key={link.name}
-                  variants={{
-                    hidden: { opacity: 0, x: -20 },
-                    visible: { opacity: 1, x: 0 },
-                  }}
-                >
-                  <Link
-                    to={link.path}
-                    className="text-brand-black hover:text-brand-accent block"
+              {navLinks.map((link) => {
+                const active = isActive(link.path);
+
+                return (
+                  <motion.div
+                    key={link.name}
+                    variants={{
+                      hidden: { opacity: 0, x: -20 },
+                      visible: { opacity: 1, x: 0 },
+                    }}
                   >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      to={link.path}
+                      className={cn(
+                        "block",
+                        active
+                          ? "text-brand-accent"
+                          : "text-brand-black hover:text-brand-accent",
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </motion.div>
+
             <div className="mt-auto">
               <Button to="/contact" className="w-full">
-                Plan Your Stay &rarr;
+                Plan Your Stay →
               </Button>
             </div>
           </motion.div>

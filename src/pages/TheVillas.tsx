@@ -36,14 +36,8 @@ export function TheVillas() {
           variants={staggerContainerSlow}
           initial="hidden"
           animate="visible"
-          className="relative z-10 text-center px-5 max-w-3xl mx-auto"
+          className="relative z-10 text-center px-5 max-w-3xl mx-auto py-2"
         >
-          <motion.p
-            variants={fadeUp}
-            className="text-xs font-semibold uppercase tracking-widest text-white/60 mb-6"
-          >
-            Familia Furtado
-          </motion.p>
           <AnimatedHeading
             text="The Villas"
             className="text-6xl xl:text-7xl font-extrabold leading-none text-white mb-6"
@@ -245,14 +239,14 @@ export function TheVillas() {
             Check availability or simply get in touch. We respond personally -
             no automated replies, no waiting rooms.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button to="/contact" variant="primary">
+          <div className="flex max-md:flex-col gap-4 justify-center">
+            <Button to="/contact" variant="primary" className="w-full ">
               Start the Conversation &rarr;
             </Button>
             <Button
               to="#"
               variant="outlineWhite"
-              className="border-white/20 text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
+              className="w-full border-white/20 text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
             >
               View on Airbnb
             </Button>
