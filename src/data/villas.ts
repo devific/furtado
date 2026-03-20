@@ -12,6 +12,7 @@ export const villaData = [
     plotSize: "300 sq mtr",
     style: "Portuguese exterior, modern interior",
     views: ["Pool View", "Valley View", "Partial Sea View"],
+    image: "IMG_1270.JPG",
     features: [
       "2 Bedrooms (1 with bathtub)",
       "3 Bathrooms",
@@ -56,6 +57,7 @@ export const villaData = [
     plotSize: "300 sq mtr",
     style: "Portuguese exterior, modern interior",
     views: ["Pool View", "Valley View", "Partial Sea View"],
+    image: "IMG_1288.JPG",
     features: [
       "2 Bedrooms (1 with bathtub)",
       "3 Bathrooms",

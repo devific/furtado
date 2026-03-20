@@ -9,13 +9,14 @@ import {
   staggerContainer,
   staggerContainerSlow,
 } from "../lib/animations";
+import { imagekitBaseUrl } from "@/config";
 
 export function PoolAndGrounds() {
   return (
     <PageTransition>
       {/* Section 4.1 - Page Hero */}
       <ParallaxSection
-        imageSrc="https://images.unsplash.com/photo-1543489822-c49534f3271f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+        imageSrc={`${imagekitBaseUrl}/IMG_1247.JPG?tr=w-1200,h-700,fo-auto,q-80`}
         className="min-h-[60vh] flex items-center justify-center pt-16"
       >
         <div className="absolute inset-0 bg-black/40" />
@@ -83,7 +84,7 @@ export function PoolAndGrounds() {
           >
             <div className="rounded-2xl overflow-hidden aspect-[4/5]">
               <img
-                src="https://images.unsplash.com/photo-1543489822-c49534f3271f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                src={`${imagekitBaseUrl}/IMG_1243.JPG?tr=w-700,h-800,fo-auto,q-80`}
                 alt="Pool details"
                 className="w-full h-full object-cover"
               />
@@ -92,45 +93,51 @@ export function PoolAndGrounds() {
         </div>
       </section>
 
-      {/* Section 4.3 - The Deck */}
-      <section className="bg-brand-surface relative py-32 px-5 flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-            alt="The Deck"
-            className="w-full h-full object-cover opacity-20"
-          />
-          <div className="absolute inset-0 bg-brand-surface/80" />
-        </div>
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="relative z-10 text-center max-w-2xl mx-auto"
-        >
-          <h2 className="text-4xl xl:text-5xl font-bold leading-tight mb-6 text-brand-black">
-            The Deck
-          </h2>
-          <p className="text-lg text-brand-mid leading-relaxed">
-            Sun loungers, the sound of water, and the smell of Goa in the air.
-            The deck is yours from sunrise to last light - and beyond.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* Section 4.4 - The Garden */}
       <section className="bg-white py-20 md:py-28 px-5 md:px-10 xl:px-20">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="max-w-7xl mx-auto gap-12 lg:gap-16 items-center  flex">
           <motion.div
             variants={slideLeft}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <div className="rounded-2xl overflow-hidden aspect-[4/3]">
+            <div className="min-w-xl rounded-2xl overflow-hidden aspect-[4/3]">
               <img
-                src="https://images.unsplash.com/photo-1585128719715-46776b56a0d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                src={`${imagekitBaseUrl}/IMG_1259.JPG?tr=w-700,h-525,fo-auto,q-80`}
+                alt="The Deck"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+          <motion.div
+            variants={slideRight}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl xl:text-5xl font-bold leading-tight mb-6 text-brand-black">
+              The Deck
+            </h2>
+            <p className="text-lg text-brand-mid leading-relaxed mb-8">
+              Sun loungers, the sound of water, and the smell of Goa in the air.
+              The deck is yours from sunrise to last light - and beyond.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Section 4.4 - The Garden */}
+      <section className="bg-white py-20 md:py-28 px-5 md:px-10 xl:px-20">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse gap-12 lg:gap-16 items-center">
+          <motion.div
+            variants={slideLeft}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <div className="rounded-2xl min-w-xl overflow-hidden aspect-[4/3]">
+              <img
+                src={`${imagekitBaseUrl}/IMG_1215.JPG?tr=w-700,h-525,fo-auto,q-80`}
                 alt="Tropical Garden"
                 className="w-full h-full object-cover"
               />
@@ -198,45 +205,6 @@ export function PoolAndGrounds() {
             music. The private chef can set this up for any meal, any occasion.
           </p>
         </motion.div>
-      </section>
-
-      {/* Section 4.6 - Photo Grid */}
-      <section className="bg-white py-20 md:py-28 px-5 md:px-10 xl:px-20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4"
-          >
-            {[
-              "https://images.unsplash.com/photo-1543489822-c49534f3271f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-              "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-              "https://images.unsplash.com/photo-1585128719715-46776b56a0d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-              "https://images.unsplash.com/photo-1533143708019-ea5cfa80213e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-              "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-              "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-              "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-              "https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-              "https://images.unsplash.com/photo-1522771731478-44eb10e5c776?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-            ].map((src, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                className="break-inside-avoid rounded-2xl overflow-hidden"
-              >
-                <motion.img
-                  whileHover={{ scale: 1.03 }}
-                  transition={{ duration: 0.5 }}
-                  src={src}
-                  alt="Gallery image"
-                  className="w-full h-auto object-cover"
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
       </section>
     </PageTransition>
   );

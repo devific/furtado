@@ -4,88 +4,93 @@ import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { fadeUp, staggerContainer, scaleUp } from "../lib/animations";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { imagekitBaseUrl } from "@/config";
+import { shuffleArray } from "@/lib/utils";
 
 const galleryImages = [
-  {
-    src: "https://images.unsplash.com/photo-1543489822-c49534f3271f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Pool & Grounds",
-    caption: "14-metre private pool",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Exteriors",
-    caption: "Villa exterior",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Interiors",
-    caption: "Living hall",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1518182170546-076616fdca44?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Views",
-    caption: "Valley view from balcony",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1540541338287-41700207dee6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Pool & Grounds",
-    caption: "Sun deck",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Exteriors",
-    caption: "Villa Two exterior",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Interiors",
-    caption: "Fully equipped kitchen",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Views",
-    caption: "Partial sea view",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1585128719715-46776b56a0d1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Pool & Grounds",
-    caption: "Tropical garden",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1522771731478-44eb10e5c776?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Interiors",
-    caption: "Bedroom",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1533143708019-ea5cfa80213e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Pool & Grounds",
-    caption: "Outdoor dining",
-  },
-  {
-    src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-    category: "Occasions",
-    caption: "Wedding stays",
-  },
+  { src: "IMG_1261.JPG", category: "deck" },
+  { src: "IMG_1259.JPG", category: "deck" },
+
+  { src: "IMG_1209.JPG", category: "pool" },
+  { src: "IMG_1197.JPG", category: "pool" },
+  { src: "IMG_1210.JPG", category: "pool" },
+  { src: "IMG_1247.JPG", category: "pool" },
+  { src: "IMG_1248.JPG", category: "pool" },
+  { src: "IMG_1198.JPG", category: "pool" },
+  { src: "IMG_1243.JPG", category: "pool" },
+  { src: "IMG_1230.JPG", category: "pool" },
+  { src: "IMG_1225.JPG", category: "pool" },
+  { src: "IMG_1238.JPG", category: "pool" },
+  { src: "IMG_1234.JPG", category: "pool" },
+  { src: "IMG_1264.JPG", category: "pool" },
+
+  { src: "IMG_1183.JPG", category: "interiors" },
+  { src: "IMG_1141.JPG", category: "interiors" },
+  { src: "IMG_1192.JPG", category: "interiors" },
+  { src: "IMG_1131.JPG", category: "interiors" },
+  { src: "IMG_1148.JPG", category: "interiors" },
+  { src: "IMG_1133.JPG", category: "interiors" },
+  { src: "IMG_1265.JPG", category: "interiors" },
+  { src: "IMG_1252.JPG", category: "interiors" },
+  { src: "IMG_1194.JPG", category: "interiors" },
+  { src: "IMG_1203.JPG", category: "interiors" },
+  { src: "IMG_1186.JPG", category: "interiors" },
+  { src: "IMG_1174.JPG", category: "interiors" },
+  { src: "IMG_1150.JPG", category: "interiors" },
+  { src: "IMG_1138.JPG", category: "interiors" },
+  { src: "IMG_1180.JPG", category: "interiors" },
+  { src: "IMG_1191.JPG", category: "interiors" },
+  { src: "IMG_1129.JPG", category: "interiors" },
+  { src: "IMG_1199.JPG", category: "interiors" },
+  { src: "IMG_1130.JPG", category: "interiors" },
+  { src: "IMG_1176.JPG", category: "interiors" },
+  { src: "IMG_1193.JPG", category: "interiors" },
+  { src: "IMG_1137.JPG", category: "interiors" },
+  { src: "IMG_1195.JPG", category: "interiors" },
+  { src: "IMG_1184.JPG", category: "interiors" },
+  { src: "IMG_1132.JPG", category: "interiors" },
+  { src: "IMG_1152.JPG", category: "interiors" },
+  { src: "IMG_1149.JPG", category: "interiors" },
+  { src: "IMG_1136.JPG", category: "interiors" },
+  { src: "IMG_1134.JPG", category: "interiors" },
+  { src: "IMG_1140.JPG", category: "interiors" },
+  { src: "IMG_1196.JPG", category: "interiors" },
+  { src: "IMG_1147.JPG", category: "interiors" },
+  { src: "IMG_1151.JPG", category: "interiors" },
+
+  { src: "IMG_1262.JPG", category: "outdoors" },
+  { src: "IMG_1217.JPG", category: "outdoors" },
+  { src: "IMG_1215.JPG", category: "outdoors" },
+  { src: "IMG_1249.JPG", category: "outdoors" },
+  { src: "IMG_1222.JPG", category: "outdoors" },
+
+  { src: "IMG_1279.JPG", category: "exteriors" },
+  { src: "IMG_1285.JPG", category: "exteriors" },
+  { src: "IMG_1270.JPG", category: "exteriors" },
+  { src: "IMG_1288.JPG", category: "exteriors" },
+  { src: "IMG_1286.JPG", category: "exteriors" },
 ];
+
+const shuffledGalleryImages = shuffleArray(galleryImages);
 
 const categories = [
   "All",
-  "Pool & Grounds",
+  "Pool",
   "Interiors",
   "Exteriors",
-  "Views",
-  "Occasions",
+  "Outdoors",
+  "Deck",
 ];
 
 export function Gallery() {
-  const [activeCategory, setActiveCategory] = useState("All");
+  const [activeCategory, setActiveCategory] = useState("all");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const filteredImages =
-    activeCategory === "All"
-      ? galleryImages
-      : galleryImages.filter((img) => img.category === activeCategory);
+    activeCategory === "all"
+      ? shuffledGalleryImages
+      : shuffledGalleryImages.filter((img) => img.category === activeCategory);
 
   const openLightbox = (index) => {
     setCurrentImageIndex(index);
@@ -135,10 +140,10 @@ export function Gallery() {
             {categories.map((cat) => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => setActiveCategory(cat.toLocaleLowerCase())}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-colors ${
-                  activeCategory === cat
-                    ? "bg-brand-black text-white"
+                  activeCategory === cat.toLowerCase()
+                    ? " border border-brand-black"
                     : "bg-brand-surface text-brand-mid hover:bg-brand-rule"
                 }`}
               >
@@ -157,7 +162,7 @@ export function Gallery() {
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
-            className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 space-y-4"
           >
             {filteredImages.map((img, i) => (
               <motion.div
@@ -169,9 +174,10 @@ export function Gallery() {
                 <motion.img
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.5 }}
-                  src={img.src}
-                  alt={img.caption}
+                  src={`${imagekitBaseUrl}/${img.src}?tr=w-600,h-400,fo-auto`}
+                  alt={i}
                   className="w-full h-auto object-cover"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <span className="text-white font-medium">View</span>
@@ -218,13 +224,10 @@ export function Gallery() {
               onClick={(e) => e.stopPropagation()}
             >
               <img
-                src={filteredImages[currentImageIndex].src}
-                alt={filteredImages[currentImageIndex].caption}
+                src={`${imagekitBaseUrl}/${filteredImages[currentImageIndex].src}?tr=w-600,h-400,fo-auto`}
+                alt="Furtado Gallery"
                 className="max-w-full max-h-[80vh] object-contain rounded-xl"
               />
-              <p className="text-white/80 mt-4 text-center">
-                {filteredImages[currentImageIndex].caption}
-              </p>
             </div>
           </motion.div>
         )}

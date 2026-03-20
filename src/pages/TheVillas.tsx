@@ -22,13 +22,14 @@ import {
   Sparkles,
   ShieldCheck,
 } from "lucide-react";
+import { imagekitBaseUrl } from "@/config";
 
 export function TheVillas() {
   return (
     <PageTransition>
       {/* Section 2.1 - Page Hero */}
       <ParallaxSection
-        imageSrc="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+        imageSrc={`${imagekitBaseUrl}/IMG_1286.JPG?tr=w-1200,h-700,fo-auto,q-80`}
         className="min-h-[60vh] flex items-center justify-center pt-16"
       >
         <div className="absolute inset-0 bg-black/50" />
@@ -68,11 +69,7 @@ export function TheVillas() {
                 <motion.img
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5 }}
-                  src={
-                    index === 0
-                      ? "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-                      : "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-                  }
+                  src={`${imagekitBaseUrl}/${villaData[index].image}?tr=w-800,h-600,fo-auto,q-80`}
                   alt={villa.name}
                   className="w-full h-full object-cover"
                 />
