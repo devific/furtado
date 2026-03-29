@@ -7,38 +7,11 @@ import {
   slideLeft,
   slideRight,
   staggerContainer,
-  scaleUp,
 } from "../lib/animations";
-import { Phone, Mail, MapPin, Clock, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronDown } from "lucide-react";
 import EnquiryForm from "@/components/EnquiryForm";
-
-const faqs = [
-  {
-    q: "Is the pool shared between both villas?",
-    a: "Yes - the 14-metre pool, jacuzzi, and all outdoor grounds are shared between both villas. If you book both villas together, the entire compound is exclusively yours.",
-  },
-  {
-    q: "Can we have an event or celebration at the villa?",
-    a: "Absolutely. The outdoor spaces are well-suited for private celebrations, small weddings, and milestone events. Let us know in advance so we can prepare.",
-  },
-  {
-    q: "Is a private chef included in the price?",
-    a: "The villa rate includes daily housekeeping and on-site caretaker service. A private chef is available at an additional cost - just ask when you book.",
-  },
-  {
-    q: "What is the check-in and check-out time?",
-    a: "Standard check-in is at 2:00 PM and check-out is at 11:00 AM. Early/late options can be arranged subject to availability.",
-  },
-  {
-    q: "Are pets allowed?",
-    a: "We're unable to accommodate pets at Familia Furtado.",
-  },
-  {
-    q: "What is the cancellation policy?",
-    a: "Our cancellation terms vary by season and booking channel. Please contact us directly for current policy details, or refer to the platform you book through.",
-  },
-];
+import { faqs, contactInfo } from "@/config";
+import { cn } from "@/lib/utils";
 
 export function Contact() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -92,28 +65,7 @@ export function Contact() {
             </p>
 
             <div className="flex flex-col gap-6">
-              {[
-                {
-                  icon: Phone,
-                  label: "Call or WhatsApp",
-                  value: "+91 98765 43210",
-                },
-                {
-                  icon: Mail,
-                  label: "Email Us",
-                  value: "hello@furtadohospitality.com",
-                },
-                {
-                  icon: MapPin,
-                  label: "Location",
-                  value: "Porvorim, North Goa, India",
-                },
-                {
-                  icon: Clock,
-                  label: "Response Time",
-                  value: "Usually within a few hours",
-                },
-              ].map((info, i) => (
+              {contactInfo.map((info, i) => (
                 <div key={i} className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-brand-surface flex items-center justify-center shrink-0">
                     <info.icon className="w-5 h-5 text-brand-accent" />
@@ -122,7 +74,17 @@ export function Contact() {
                     <h4 className="text-sm font-semibold text-brand-black">
                       {info.label}
                     </h4>
-                    <p className="text-brand-mid mt-1">{info.value}</p>
+                    <a
+                      href={info.href}
+                      className={cn(
+                        "text-brand-mid mt-1",
+                        info.href ? "hover:underline" : "",
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {info.value}
+                    </a>
                   </div>
                 </div>
               ))}
