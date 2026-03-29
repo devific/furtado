@@ -55,6 +55,10 @@ export default function EnquiryForm() {
     formState: { errors },
   } = useForm<FormData>({
     resolver: zodResolver(schema),
+    defaultValues: {
+      villa: "",
+      occasion: "",
+    },
   });
 
   const villaValue = watch("villa");
@@ -73,7 +77,6 @@ export default function EnquiryForm() {
       onSubmit={handleSubmit(onSubmit)}
     >
       {/* Name + Email */}
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label htmlFor="name">Full Name</Label>
@@ -102,7 +105,6 @@ export default function EnquiryForm() {
       </div>
 
       {/* Phone + Guests */}
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label>Phone Number</Label>
@@ -131,7 +133,6 @@ export default function EnquiryForm() {
       </div>
 
       {/* Dates */}
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div className="space-y-2">
           <Label>Check-in Date</Label>
@@ -151,12 +152,20 @@ export default function EnquiryForm() {
       </div>
 
       {/* Selects */}
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {/* Villa */}
         <div className="space-y-2">
           <Label>Villa Preference</Label>
 
-          <Select onValueChange={(v) => setValue("villa", v)}>
+          <Select
+            value={villaValue}
+            onValueChange={(v) =>
+              setValue("villa", v, {
+                shouldValidate: true,
+                shouldDirty: true,
+              })
+            }
+          >
             <SelectTrigger className="w-full bg-white">
               <SelectValue placeholder="Select Villa">
                 {getLabel(villaValue, villaOptions)}
@@ -177,10 +186,19 @@ export default function EnquiryForm() {
           )}
         </div>
 
+        {/* Occasion */}
         <div className="space-y-2">
           <Label>Occasion</Label>
 
-          <Select onValueChange={(v) => setValue("occasion", v)}>
+          <Select
+            value={occasionValue}
+            onValueChange={(v) =>
+              setValue("occasion", v, {
+                shouldValidate: true,
+                shouldDirty: true,
+              })
+            }
+          >
             <SelectTrigger className="w-full bg-white">
               <SelectValue placeholder="Occasion (Optional)">
                 {getLabel(occasionValue, occasionOptions)}
@@ -199,7 +217,6 @@ export default function EnquiryForm() {
       </div>
 
       {/* Message */}
-
       <div className="space-y-2">
         <Label>Message</Label>
         <Textarea
