@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { VillaCard } from "@/components/ui/VillaCard";
 import { villaData } from "@/data/villas";
 import { imagekitBaseUrl } from "@/config";
+import EnquiryFormDialog from "@/components/EnquiryFormDialog";
 
 export function TheVillas() {
   return (
@@ -73,13 +74,15 @@ export function TheVillas() {
             Travelling as a larger group? Both villas can be rented together as
             a private compound for up to 12 guests.
           </p>
-          <Button
-            to="/contact"
-            variant="primary"
-            className="shrink-0 cursor-pointer"
-          >
-            Book the Full Estate &rarr;
-          </Button>
+          <EnquiryFormDialog>
+            <Button
+              to="/contact"
+              variant="primary"
+              className="shrink-0 cursor-pointer"
+            >
+              Book the Full Estate &rarr;
+            </Button>
+          </EnquiryFormDialog>
         </motion.div>
       </div>
     </section>

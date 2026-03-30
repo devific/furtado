@@ -3,6 +3,7 @@ import { fadeUp } from "@/lib/animations";
 import { Button } from "@/components/ui/button";
 import { ParallaxSection } from "@/components/ui/ParallaxSection";
 import { imagekitBaseUrl } from "@/config";
+import { Link } from "react-router-dom";
 
 export function Parallax() {
   return (
@@ -56,8 +57,8 @@ export function Parallax() {
           </div>
         </div>
 
-        <Button to="/pool" variant="outlineWhite" className="cursor-pointer">
-          Discover the Pool &rarr;
+        <Button asChild variant="outlineWhite" className="cursor-pointer">
+          <Link to="/pool">Discover the Pool &rarr;</Link>
         </Button>
       </motion.div>
     </ParallaxSection>

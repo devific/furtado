@@ -2,6 +2,12 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 
 export const imagekitBaseUrl = "https://ik.imagekit.io/devific/furtado/";
+export const airbnbUrl = "https://www.airbnb.com/rooms/1437442770574789813";
+export const bookingDotComUrl =
+  "https://www.booking.com/hotel/in/familia-furtado.en-gb.html";
+
+export const phoneNumber = "+919822121091";
+export const emailAddress = "furtadoshospitality@gmail.com";
 
 export const faqs = [
   {
@@ -34,21 +40,21 @@ export const contactInfo = [
   {
     icon: Phone,
     label: "Call",
-    value: "+91 9822 121 091",
-    href: "tel:+919822121091",
+    value: phoneNumber,
+    href: `tel:${phoneNumber}`,
   },
   {
     icon: SiWhatsapp,
     label: "WhatsApp",
-    value: "+91 9822 121 091",
-    href: "https://wa.me/919822121091",
+    value: phoneNumber,
+    href: `https://wa.me/${phoneNumber}`,
   },
 
   {
     icon: Mail,
     label: "Email Us",
-    value: "furtadoshospitality@gmail.com",
-    href: "mailto:furtadoshospitality@gmail.com",
+    value: emailAddress,
+    href: `mailto:${emailAddress}`,
   },
   {
     icon: MapPin,

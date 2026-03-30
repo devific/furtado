@@ -22,7 +22,9 @@ import {
   Sparkles,
   ShieldCheck,
 } from "lucide-react";
-import { imagekitBaseUrl } from "@/config";
+import { airbnbUrl, imagekitBaseUrl } from "@/config";
+import EnquiryFormDialog from "@/components/EnquiryFormDialog";
+import { Link } from "react-router-dom";
 
 export function TheVillas() {
   return (
@@ -90,8 +92,10 @@ export function TheVillas() {
                 ))}
               </ul>
               <div>
-                <Button to={`/villas/${villa.id}`} variant="primary">
-                  Explore This Villa &rarr;
+                <Button asChild variant="primary">
+                  <Link to={`/villas/${villa.id}`} className="block h-full">
+                    Explore This Villa &rarr;
+                  </Link>
                 </Button>
               </div>
             </motion.div>
@@ -145,9 +149,11 @@ export function TheVillas() {
             <p className="text-lg font-medium text-brand-black mb-8">
               12 Guests · 4 Bedrooms · 6 Bathrooms · 14m Pool · 8 Balconies
             </p>
-            <Button to="/contact" variant="primary">
-              Enquire About the Full Estate &rarr;
-            </Button>
+            <EnquiryFormDialog>
+              <Button variant="primary">
+                Enquire About the Full Estate &rarr;
+              </Button>
+            </EnquiryFormDialog>
           </motion.div>
         </div>
       </section>
@@ -241,11 +247,13 @@ export function TheVillas() {
               Start the Conversation &rarr;
             </Button>
             <Button
-              to="#"
+              asChild
               variant="outlineWhite"
               className="w-full border-white/20 text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
             >
-              View on Airbnb
+              <a href={airbnbUrl} target="_blank" rel="noopener noreferrer">
+                View on Airbnb
+              </a>
             </Button>
           </div>
         </motion.div>

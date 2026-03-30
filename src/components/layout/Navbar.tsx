@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import EnquiryFormDialog from "../EnquiryFormDialog";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -104,24 +105,27 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:block">
-            <Button
-              asChild
-              variant={isTransparent ? "outlineWhite" : "secondary"}
-              className="rounded-full px-6 py-2.5 text-sm font-medium"
-            >
-              <Link to="/contact">Plan Your Stay →</Link>
-            </Button>
+            <EnquiryFormDialog>
+              <Button
+                variant={isTransparent ? "outlineWhite" : "secondary"}
+                className="rounded-full px-6 py-2.5 text-sm font-medium"
+              >
+                Plan Your Stay →
+              </Button>
+            </EnquiryFormDialog>
           </div>
 
           <div className="flex gap-2 items-center">
             {/* Mobile CTA */}
-            <Button
-              asChild
-              variant={isTransparent ? "outlineWhite" : "secondary"}
-              className="rounded-full px-6 py-2.5 text-sm font-medium hidden cursor-pointer"
-            >
-              <Link to="/contact">Plan Your Stay →</Link>
-            </Button>
+
+            <EnquiryFormDialog>
+              <Button
+                variant={isTransparent ? "outlineWhite" : "secondary"}
+                className="rounded-full px-6 p  y-2.5 text-sm font-medium hidden cursor-pointer"
+              >
+                Plan Your Stay →
+              </Button>
+            </EnquiryFormDialog>
 
             {/* Mobile Menu Toggle */}
             <button
@@ -186,10 +190,12 @@ export function Navbar() {
               })}
             </motion.div>
 
-            <div className="mt-auto">
-              <Button asChild className="w-full">
-                <Link to="/contact">Plan Your Stay →</Link>
-              </Button>
+            <div className="mt-auto ">
+              <EnquiryFormDialog>
+                <Button className="rounded-full px-6 py-2.5 text-sm font-medium cursor-pointer w-full">
+                  Plan Your Stay →
+                </Button>
+              </EnquiryFormDialog>
             </div>
           </motion.div>
         )}

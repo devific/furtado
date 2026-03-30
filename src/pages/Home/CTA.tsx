@@ -1,6 +1,9 @@
 import { motion } from "motion/react";
 import { fadeUp } from "@/lib/animations";
 import { Button } from "@/components/ui/button";
+import EnquiryFormDialog from "@/components/EnquiryFormDialog";
+import { Link } from "react-router-dom";
+import { airbnbUrl } from "@/config";
 
 function CTA() {
   return (
@@ -20,15 +23,19 @@ function CTA() {
           automated replies, no waiting rooms.
         </p>
         <div className="flex max-md:flex-col  gap-4 justify-center max-w-md mx-auto">
-          <Button to="/contact" variant="primary" className="w-full">
-            Start the Conversation &rarr;
-          </Button>
+          <EnquiryFormDialog>
+            <Button to="/contact" variant="primary" className="w-full">
+              Start the Conversation &rarr;
+            </Button>
+          </EnquiryFormDialog>
           <Button
-            to="#"
+            asChild
             variant="outlineWhite"
             className="w-full border-white/20 text-white/70 hover:bg-white/10 hover:text-white hover:border-white/30"
           >
-            View on Airbnb
+            <Link to={airbnbUrl} target="_blank" rel="noopener noreferrer">
+              View on Airbnb
+            </Link>
           </Button>
         </div>
       </motion.div>

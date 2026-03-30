@@ -14,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cn } from "@/lib/utils";
 
 const schema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -46,7 +47,11 @@ const occasionOptions = [
   { value: "other", label: "Other" },
 ];
 
-export default function EnquiryForm() {
+interface Props {
+  className?: string;
+}
+
+export default function EnquiryForm({ className }: Props) {
   const {
     register,
     handleSubmit,
@@ -73,7 +78,10 @@ export default function EnquiryForm() {
 
   return (
     <form
-      className="bg-brand-surface rounded-2xl p-8 space-y-6"
+      className={cn(
+        "bg-brand-surface rounded-2xl p-8 space-y-6 overflow-y-auto",
+        className,
+      )}
       onSubmit={handleSubmit(onSubmit)}
     >
       {/* Name + Email */}

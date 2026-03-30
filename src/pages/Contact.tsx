@@ -10,7 +10,7 @@ import {
 } from "../lib/animations";
 import { ChevronDown } from "lucide-react";
 import EnquiryForm from "@/components/EnquiryForm";
-import { faqs, contactInfo } from "@/config";
+import { faqs, contactInfo, airbnbUrl, bookingDotComUrl } from "@/config";
 import { cn } from "@/lib/utils";
 
 export function Contact() {
@@ -140,7 +140,7 @@ export function Contact() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
-                href="#"
+                href={airbnbUrl}
                 className="bg-white rounded-2xl p-6 border border-brand-rule hover:border-brand-accent transition-colors flex items-center justify-center gap-3 w-full sm:w-64"
               >
                 <span className="font-semibold text-brand-black">
@@ -148,7 +148,7 @@ export function Contact() {
                 </span>
               </a>
               <a
-                href="#"
+                href={bookingDotComUrl}
                 className="bg-white rounded-2xl p-6 border border-brand-rule hover:border-brand-accent transition-colors flex items-center justify-center gap-3 w-full sm:w-64"
               >
                 <span className="font-semibold text-brand-black">

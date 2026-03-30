@@ -13,6 +13,8 @@ import {
 } from "../lib/animations";
 import { ChefHat, Flame, Waves, Sunset, Star, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import EnquiryForm from "@/components/EnquiryForm";
+import EnquiryFormDialog from "@/components/EnquiryFormDialog";
 
 export function Experiences() {
   return (
@@ -154,7 +156,7 @@ export function Experiences() {
           <div className="space-y-24">
             {[
               {
-                title: "Porvorim Beach",
+                title: "Calangute Beach",
                 desc: "A five-minute drive and you're at one of North Goa's most beloved beaches. Long, uncrowded, and lined with beach cafes. Perfect for mornings.",
                 img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
               },
@@ -294,9 +296,9 @@ export function Experiences() {
           </motion.div>
 
           <div className="text-center">
-            <Button to="/contact" variant="primary">
-              Tell us your occasion when you enquire &rarr;
-            </Button>
+            <EnquiryFormDialog>
+              <Button variant="primary">Tell us your occasion &rarr;</Button>
+            </EnquiryFormDialog>
           </div>
         </div>
       </section>

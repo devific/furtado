@@ -1,3 +1,9 @@
+import {
+  airbnbUrl,
+  bookingDotComUrl,
+  emailAddress,
+  phoneNumber,
+} from "@/config";
 import { Link } from "react-router-dom";
 
 export function Footer() {
@@ -52,18 +58,18 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="tel:+919876543210"
+                  href={`tel:${phoneNumber}`}
                   className="text-white/60 hover:text-white text-sm transition-colors"
                 >
-                  +91 98765 43210
+                  {phoneNumber}
                 </a>
               </li>
               <li>
                 <a
-                  href="mailto:hello@furtadohospitality.com"
+                  href={`mailto:${emailAddress}`}
                   className="text-white/60 hover:text-white text-sm transition-colors"
                 >
-                  hello@furtadohospitality.com
+                  {emailAddress}
                 </a>
               </li>
               <li className="text-white/40 text-xs mt-4">
@@ -78,7 +84,9 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href={airbnbUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white/60 hover:text-white text-sm transition-colors underline"
                 >
                   Airbnb
@@ -86,7 +94,9 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href={bookingDotComUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white/60 hover:text-white text-sm transition-colors underline"
                 >
                   Booking.com
