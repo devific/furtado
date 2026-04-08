@@ -161,19 +161,9 @@ export function Experiences() {
                 img: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
               },
               {
-                title: "Spice Plantation Tours",
-                desc: "Head inland and discover where Goa's famous spices grow. Guided tours, incredible aromas, and a full lunch included at most estates.",
-                img: "https://images.unsplash.com/photo-1596622723231-b20320c7346b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-              },
-              {
                 title: "Portuguese Quarter Walks",
                 desc: "Panaji's Latin Quarter and Fontainhas are among the most beautiful colonial streets in India. A half-day well spent.",
-                img: "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-              },
-              {
-                title: "Private Boat Charters",
-                desc: "Dolphin watching, sunset cruises, or a private fishing trip. The Goa coast is best experienced from the water.",
-                img: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+                img: "https://images.unsplash.com/photo-1648367819123-19d2ffe43f3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
               },
             ].map((exp, i) => (
               <div
