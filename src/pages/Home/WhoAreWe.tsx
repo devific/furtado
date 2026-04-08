@@ -11,6 +11,7 @@ export function WhoAreWe() {
 
   const nextSlide = () =>
     setCurrentIndex((prev) => (prev + 1) % whoWeAreImages.length);
+
   const prevSlide = () =>
     setCurrentIndex(
       (prev) => (prev - 1 + whoWeAreImages.length) % whoWeAreImages.length,
@@ -18,21 +19,23 @@ export function WhoAreWe() {
 
   return (
     <section className="bg-white py-24 md:py-32 px-5 md:px-10 overflow-hidden">
-      <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-[1200px] mx-auto space-y-16">
+        {/* TEXT FULL WIDTH */}
         <motion.div
           variants={slideLeft}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="max-w-lg lg:ml-auto pr-8"
+          className="text-center max-w-3xl mx-auto"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-brand-black mb-8 tracking-tight">
             Who We Are
           </h2>
-          <div className="space-y-6 text-brand-mid text-base leading-relaxed">
+
+          <div className="space-y-6 text-brand-mid text-base md:text-lg leading-relaxed">
             <p>
               At Furtado's Hospitality, we believe a home is more than bricks
-              and mortar-it's a personal sanctuary where life unfolds, memories
+              and mortar—it's a personal sanctuary where life unfolds, memories
               are made, and peace finds its place.
             </p>
             <p>
@@ -43,47 +46,43 @@ export function WhoAreWe() {
           </div>
         </motion.div>
 
+        {/* CAROUSEL BELOW */}
         <motion.div
           variants={slideRight}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="relative h-[500px] w-full flex items-center"
+          className="relative w-full max-w-5xl mx-auto"
         >
+          {/* LEFT BUTTON */}
           <button
             onClick={prevSlide}
-            className="cursor-pointer absolute left-0 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all"
+            className="cursor-pointer absolute left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg"
           >
-            <ArrowLeft size={18} className="text-brand-black" />
+            <ArrowLeft size={18} />
           </button>
 
-          <div className="absolute max-lg:left-4 max-lg:right-4 lg:left-16 lg:right-32 h-full z-10">
-            <AnimatePresence>
+          {/* IMAGE CONTAINER (16:9) */}
+          <div className="relative w-full aspect-video overflow-hidden rounded-3xl shadow-2xl">
+            <AnimatePresence mode="wait">
               <motion.img
                 key={currentIndex}
-                src={`${imagekitBaseUrl}/${whoWeAreImages[currentIndex]}?tr=w-350,h-500,fo-auto,q-80`}
+                src={`${imagekitBaseUrl}/${whoWeAreImages[currentIndex]}?tr=w-1200,h-675,fo-auto,q-80`}
                 initial={{ opacity: 0, scale: 1.05 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="absolute inset-0 w-full h-full object-cover rounded-3xl shadow-2xl"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </AnimatePresence>
           </div>
 
-          <div className="absolute -right-16 w-64 h-[80%] z-0">
-            <img
-              src={`${imagekitBaseUrl}/${whoWeAreImages[(currentIndex + 1) % whoWeAreImages.length]}?tr=w-350,h-500,fo-auto,q-80`}
-              className="w-full h-full object-cover rounded-3xl opacity-40 blur-[2px]"
-              alt=""
-            />
-          </div>
-
+          {/* RIGHT BUTTON */}
           <button
             onClick={nextSlide}
-            className="cursor-pointer absolute right-0 lg:right-12 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all"
+            className="cursor-pointer absolute right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg"
           >
-            <ArrowRight size={18} className="text-brand-black" />
+            <ArrowRight size={18} />
           </button>
         </motion.div>
       </div>
