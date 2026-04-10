@@ -1,48 +1,62 @@
-import { motion } from "motion/react";
-import { fadeUp, staggerContainerSlow } from "@/lib/animations";
 import { imagekitBaseUrl } from "@/config";
 
 export function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-end flex-col">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover  object-[60%_center] hidden"
+    <>
+      <section
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1463947628408-f8581a2f4aca?q=80&w=2070&auto=format&fit=crop')",
+        }}
+        className="bg-cover bg-center"
       >
-        <source
-          src={`${imagekitBaseUrl}/pool.mp4?updatedAt=1773174474223`}
-          type="video/mp4"
-        />
-      </video>
-      <img
-        src={`${imagekitBaseUrl}/IMG_1247.JPG?updatedAt=1773079618156`}
-        alt="Hero Image"
-        className="absolute inset-0 w-full h-full object-cover object-[60%_center]"
-      />
-      <div className="absolute inset-0 bg-black/20" />
-
-      <motion.div
-        variants={staggerContainerSlow}
-        initial="hidden"
-        animate="visible"
-        className="relative z-10 text-center px-5 max-w-4xl mx-auto mt-[-10vh] py-10"
+        <div className="flex max-lg:flex-col justify-end mx-auto pt-20 lg:pt-44 gap-8">
+          <div className="p-6 lg:p-12">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-2 lg:mb-6 text-black">
+              Experience Timeless Luxury in Goa
+            </h1>
+            <p className="lg:text-lg mb-4 lg:mb-6 text-black/70">
+              Indulge in serene coastal living with our exclusive villas, where
+              modern elegance meets the natural beauty of Goa.
+            </p>
+            <button className="bg-black text-white px-6 py-2 rounded-full hover:bg-black/70 transition duration-300">
+              Explore Villas
+            </button>
+          </div>
+          <img
+            src={`${imagekitBaseUrl}/ai/hero.png`}
+            alt=""
+            className="w-full lg:max-w-1/2 h-auto"
+          />
+        </div>
+      </section>
+      <section
+        style={{
+          backgroundImage:
+            "url('https://images.pexels.com/photos/16831872/pexels-photo-16831872.jpeg')",
+        }}
+        className="bg-cover bg-center"
       >
-        <motion.h1
-          variants={fadeUp}
-          className="text-4xl lg:text-5xl font-black leading-tight text-white mb-2 drop-shadow-lg"
-        >
-          Your Private Goa, Finally.
-        </motion.h1>
-        <motion.p
-          variants={fadeUp}
-          className="text-base text-white/80 max-w-2xl mx-auto leading-relaxed drop-shadow-md"
-        >
-          Two Portuguese villas. One extraordinary address. Yours, entirely.
-        </motion.p>
-      </motion.div>
-    </section>
+        <div className="flex max-lg:flex-col justify-end mx-auto pt-20 lg:pt-44 gap-8">
+          <div className="p-6 lg:p-12">
+            <h1 className="text-4xl lg:text-5xl font-bold mb-2 lg:mb-6 text-white">
+              Experience Timeless Luxury in Goa
+            </h1>
+            <p className="lg:text-lg mb-4 lg:mb-6 text-white/70">
+              Indulge in serene coastal living with our exclusive villas, where
+              modern elegance meets the natural beauty of Goa.
+            </p>
+            <button className="bg-white text-black px-6 py-2 rounded-full hover:bg-white/70 transition duration-300">
+              Explore Villas
+            </button>
+          </div>
+          <img
+            src={`${imagekitBaseUrl}/ai/hero.png`}
+            alt=""
+            className="w-full lg:max-w-1/2 h-auto"
+          />
+        </div>
+      </section>
+    </>
   );
 }
