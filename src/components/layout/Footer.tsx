@@ -130,6 +130,14 @@ export function Footer() {
           </div>
         </div>
       </div>
+      <a
+        href="//devific.in/?ref=furtadoshospitality.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hidden"
+      >
+        Devific
+      </a>
     </footer>
   );
 }
