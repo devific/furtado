@@ -19,7 +19,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > -1);
+      setScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -49,7 +49,7 @@ export function Navbar() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={cn(
           "fixed top-0 inset-x-0 z-50 h-20 transition-all duration-300 flex items-center",
-          isTransparent ? "bg-black/5" : "bg-white border-b border-brand-rule",
+          isTransparent ? "" : "bg-white",
           scrolled && !isTransparent ? "shadow-md" : "",
         )}
       >

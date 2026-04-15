@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export function Hero() {
   const navigate = useNavigate();
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden ">
       {/* Animated Background */}
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
