@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 import EnquiryForm from "@/components/EnquiryForm";
 import EnquiryFormDialog from "@/components/EnquiryFormDialog";
 
-export function Experiences() {
+export function Explore() {
   return (
     <PageTransition>
       {/* Section 5.1 - Page Hero */}

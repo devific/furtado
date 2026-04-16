@@ -10,8 +10,7 @@ export function Hero() {
       <motion.div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage:
-            "url('https://images.pexels.com/photos/16831872/pexels-photo-16831872.jpeg')",
+          backgroundImage: `url('${imagekitBaseUrl}/ai/sky-1.png')`,
         }}
         animate={{
           scale: [1, 1.1, 1],
@@ -25,7 +24,7 @@ export function Hero() {
       />
 
       {/* Content */}
-      <div className="relative flex max-lg:flex-col justify-end mx-auto pt-20 lg:pt-44 gap-8">
+      <div className="relative flex max-lg:flex-col justify-end mx-auto pt-28 lg:pt-58 gap-8">
         {/* Text Content */}
         <motion.div
           className="p-6 lg:p-12"
@@ -41,7 +40,7 @@ export function Hero() {
           }}
         >
           <motion.h1
-            className="text-4xl lg:text-5xl font-bold mb-2 lg:mb-6 text-white"
+            className="text-4xl lg:text-5xl font-bold mb-2 lg:mb-6 text-black/90"
             variants={{
               hidden: { opacity: 0, y: 40 },
               visible: { opacity: 1, y: 0 },
@@ -52,7 +51,7 @@ export function Hero() {
           </motion.h1>
 
           <motion.p
-            className="lg:text-lg mb-4 lg:mb-6 text-white/70"
+            className="lg:text-lg mb-4 lg:mb-6 text-black/70"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
@@ -64,7 +63,7 @@ export function Hero() {
           </motion.p>
 
           <motion.button
-            className="bg-white text-black px-6 py-2 rounded-full hover:bg-white/70 transition duration-300"
+            className="bg-black text-white px-6 py-2 rounded-full hover:bg-black/80 transition duration-300"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },

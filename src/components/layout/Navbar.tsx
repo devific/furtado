@@ -34,7 +34,7 @@ export function Navbar() {
     { name: "Home", path: "/" },
     { name: "Villas", path: "/villas" },
     { name: "Pool", path: "/pool" },
-    { name: "Experiences", path: "/experiences" },
+    { name: "Explore", path: "/explore" },
     { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact" },
   ];
@@ -59,7 +59,7 @@ export function Navbar() {
             to="/"
             className={cn(
               "flex items-center gap-1 z-50",
-              isTransparent ? "text-white" : "text-brand-black",
+              isTransparent ? "text-black" : "text-brand-black",
             )}
           >
             <span className="font-bold text-lg sm:text-xl lg:text-2xl tracking-tight">
@@ -80,10 +80,10 @@ export function Navbar() {
                     "relative text-sm font-medium transition-colors",
                     active
                       ? isTransparent
-                        ? "text-white"
+                        ? "text-black"
                         : "text-brand-black"
                       : isTransparent
-                        ? "text-white/70 hover:text-white"
+                        ? "text-black hover:text-black/80"
                         : "text-brand-black/70 hover:text-brand-black",
                   )}
                 >
@@ -93,8 +93,7 @@ export function Navbar() {
                     <motion.span
                       layoutId="navbar-indicator"
                       className={cn(
-                        "absolute left-0 -bottom-1 h-[2px] w-full",
-                        isTransparent ? "bg-white" : "bg-brand-accent",
+                        "absolute left-0 -bottom-1 h-[2px] w-full bg-brand-accent",
                       )}
                     />
                   )}
@@ -107,7 +106,7 @@ export function Navbar() {
           <div className="hidden lg:block">
             <EnquiryFormDialog>
               <Button
-                variant={isTransparent ? "outlineWhite" : "secondary"}
+                variant="secondary"
                 className="rounded-full px-6 py-2.5 text-sm font-medium"
               >
                 Plan Your Stay →

@@ -10,7 +10,7 @@ const Home = lazy(() => import("@/pages/Home"));
 const TheVillas = lazy(() => import("@/pages/TheVillas"));
 const VillaDetail = lazy(() => import("@/pages/VillaDetail"));
 const PoolAndGrounds = lazy(() => import("@/pages/PoolAndGrounds"));
-const Experiences = lazy(() => import("@/pages/Experiences"));
+const Explore = lazy(() => import("@/pages/Explore"));
 const Gallery = lazy(() => import("@/pages/Gallery"));
 const Contact = lazy(() => import("@/pages/Contact"));
 const Privacy = lazy(() => import("@/pages/Privacy"));
@@ -55,7 +55,7 @@ export default function Router() {
             <Route path="/villas" element={<TheVillas />} />
             <Route path="/villas/:id" element={<VillaDetail />} />
             <Route path="/pool" element={<PoolAndGrounds />} />
-            <Route path="/experiences" element={<Experiences />} />
+            <Route path="/explore" element={<Explore />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/privacy" element={<Privacy />} />

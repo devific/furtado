@@ -6,7 +6,7 @@ import { Home } from "./pages/Home";
 import { TheVillas } from "./pages/TheVillas";
 import { VillaDetail } from "./pages/VillaDetail";
 import { PoolAndGrounds } from "./pages/PoolAndGrounds";
-import { Experiences } from "./pages/Experiences";
+import { Explore } from "./pages/Explore";
 import { Gallery } from "./pages/Gallery";
 import { Contact } from "./pages/Contact";
 import { Privacy } from "./pages/Privacy";
@@ -32,7 +32,7 @@ function AnimatedRoutes() {
         <Route path="/villas" element={<TheVillas />} />
         <Route path="/villas/:id" element={<VillaDetail />} />
         <Route path="/pool" element={<PoolAndGrounds />} />
-        <Route path="/experiences" element={<Experiences />} />
+        <Route path="/explore" element={<Explore />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />

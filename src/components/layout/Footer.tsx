@@ -28,27 +28,22 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Navigate</h4>
             <ul className="space-y-2">
-              {[
-                "Home",
-                "Villas",
-                "Pool",
-                "Experiences",
-                "Gallery",
-                "Contact",
-              ].map((item) => (
-                <li key={item}>
-                  <Link
-                    to={
-                      item === "Home"
-                        ? "/"
-                        : `/${item.toLowerCase().replace(/ & /g, "-and-").replace(/ /g, "-")}`
-                    }
-                    className="text-white/60 hover:text-white text-sm transition-colors"
-                  >
-                    {item}
-                  </Link>
-                </li>
-              ))}
+              {["Home", "Villas", "Pool", "Explore", "Gallery", "Contact"].map(
+                (item) => (
+                  <li key={item}>
+                    <Link
+                      to={
+                        item === "Home"
+                          ? "/"
+                          : `/${item.toLowerCase().replace(/ & /g, "-and-").replace(/ /g, "-")}`
+                      }
+                      className="text-white/60 hover:text-white text-sm transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ),
+              )}
             </ul>
           </div>
 
