@@ -5,53 +5,62 @@ import { useNavigate } from "react-router-dom";
 export function Hero() {
   const navigate = useNavigate();
   return (
-    <section className="relative overflow-hidden ">
+    <section className="relative overflow-hidden min-h-[80vh] flex items-end">
       {/* Animated Background */}
-      <motion.div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: `url('${imagekitBaseUrl}/ai/sky-1.png')`,
-        }}
-        animate={{
-          scale: [1, 1.1, 1],
-          x: ["0%", "5%", "0%"],
-        }}
-        transition={{
-          duration: 30,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      />
+      <div className="absolute inset-0 z-0">
+        <motion.div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url('${imagekitBaseUrl}/ai/sky-1.png')`,
+          }}
+          animate={{
+            scale: [1, 1.1, 1],
+            x: ["0%", "5%", "0%"],
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        {/* Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-900/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-slate-950/30" />
+      </div>
 
       {/* Content */}
-      <div className="relative flex max-lg:flex-col justify-end mx-auto pt-28 lg:pt-58 gap-8">
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 lg:px-12 flex max-lg:flex-col items-center justify-between gap-12 pt-20">
         {/* Text Content */}
         <motion.div
-          className="p-6 lg:p-12"
+          className="max-w-2xl pb-10"
           initial="hidden"
           animate="visible"
           variants={{
             hidden: {},
             visible: {
               transition: {
-                staggerChildren: 0.2,
+                staggerChildren: 0.15,
               },
             },
           }}
         >
           <motion.h1
-            className="text-4xl lg:text-5xl font-bold mb-2 lg:mb-6 text-black/90"
+            className="text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 text-white leading-[1.1] tracking-tight"
             variants={{
               hidden: { opacity: 0, y: 40 },
               visible: { opacity: 1, y: 0 },
             }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            Experience Timeless Luxury in Goa
+            Experience{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">
+              Timeless Luxury
+            </span>{" "}
+            in Goa
           </motion.h1>
 
           <motion.p
-            className="lg:text-lg mb-4 lg:mb-6 text-black/70"
+            className="text-lg lg:text-xl mb-8 text-white/70 max-w-lg leading-relaxed"
             variants={{
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0 },
@@ -62,40 +71,55 @@ export function Hero() {
             modern elegance meets the natural beauty of Goa.
           </motion.p>
 
-          <motion.button
-            className="bg-black text-white px-6 py-2 rounded-full hover:bg-black/80 transition duration-300"
+          <motion.div
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0 },
             }}
             transition={{ duration: 0.8 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => navigate("/villas")}
+            className="flex flex-wrap gap-4"
           >
-            Explore Villas
-          </motion.button>
+            <motion.button
+              className="bg-white text-slate-950 px-8 py-4 rounded-full font-bold hover:bg-blue-50 transition-all duration-300 shadow-lg shadow-white/10"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => navigate("/villas")}
+            >
+              Explore Villas
+            </motion.button>
+            <motion.button
+              className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => navigate("/contact")}
+            >
+              Contact Us
+            </motion.button>
+          </motion.div>
         </motion.div>
 
         {/* Floating Image */}
-        <motion.img
-          src={`${imagekitBaseUrl}/ai/hero.png`}
-          alt=""
-          className="w-full lg:max-w-1/2 h-auto"
-          initial={{ opacity: 0, x: 80 }}
-          animate={{
-            opacity: 1,
-            x: [0, 20, 0],
-          }}
-          transition={{
-            opacity: { duration: 1 },
-            x: {
-              duration: 20,
+        <motion.div
+          className="relative w-full lg:w-1/2 flex justify-center items-center"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+        >
+          <div className="absolute inset-0 bg-blue-500/20 blur-[100px] rounded-full scale-75" />
+          <motion.img
+            src={`${imagekitBaseUrl}/ai/hero.png`}
+            alt="Luxury Villa"
+            className="relative z-10 w-full h-auto drop-shadow-2xl max-lg:max-w-[500px]"
+            animate={{
+              x: [0, -15, 0],
+            }}
+            transition={{
+              duration: 6,
               repeat: Infinity,
               ease: "easeInOut",
-            },
-          }}
-        />
+            }}
+          />
+        </motion.div>
       </div>
     </section>
   );

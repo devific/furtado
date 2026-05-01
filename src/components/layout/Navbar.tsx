@@ -59,7 +59,7 @@ export function Navbar() {
             to="/"
             className={cn(
               "flex items-center gap-1 z-50",
-              isTransparent ? "text-black" : "text-brand-black",
+              isTransparent ? "text-white" : "text-brand-black",
             )}
           >
             <span className="font-bold text-lg sm:text-xl lg:text-2xl tracking-tight">
@@ -80,10 +80,10 @@ export function Navbar() {
                     "relative text-sm font-medium transition-colors",
                     active
                       ? isTransparent
-                        ? "text-black"
+                        ? "text-white"
                         : "text-brand-black"
                       : isTransparent
-                        ? "text-black hover:text-black/80"
+                        ? "text-white hover:text-white/80"
                         : "text-brand-black/70 hover:text-brand-black",
                   )}
                 >
@@ -106,7 +106,7 @@ export function Navbar() {
           <div className="hidden lg:block">
             <EnquiryFormDialog>
               <Button
-                variant="secondary"
+                variant={isTransparent ? "outlineWhite" : "secondary"}
                 className="rounded-full px-6 py-2.5 text-sm font-medium"
               >
                 Plan Your Stay →
