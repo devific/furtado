@@ -148,7 +148,7 @@ export default function ImageCarousel() {
                 }}
               >
                 <img
-                  src={`${imagekitBaseUrl}/${img}`}
+                  src={`${imagekitBaseUrl}/${img}/tr:w-600,h-800,fo-auto,q-80,tr:fl-h`}
                   alt={`Luxury furniture ${i + 1}`}
                   className="w-full h-full object-cover pointer-events-none"
                   referrerPolicy="no-referrer"
@@ -241,7 +241,7 @@ export default function ImageCarousel() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
                 transition={{ duration: 0.3 }}
-                src={`${imagekitBaseUrl}/${images[lightboxIndex]}`}
+                src={`${imagekitBaseUrl}/${images[lightboxIndex]}/tr:w-1200,h-800,fo-auto,q-80,tr:fl-h`}
                 alt={`Lightbox ${lightboxIndex + 1}`}
                 className="max-w-full max-h-full object-contain shadow-2xl"
                 onClick={(e) => e.stopPropagation()}
