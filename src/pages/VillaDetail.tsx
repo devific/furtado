@@ -2,23 +2,22 @@ import { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { PageTransition } from "@/components/layout/PageTransition";
-import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
-import { Button } from "@/components/ui/button";
 import {
   fadeUp,
   slideLeft,
   slideRight,
   staggerContainer,
-  staggerContainerSlow,
 } from "../lib/animations";
 import { villaData } from "../data/villas";
 import { ChevronLeft, ChevronRight, Check } from "lucide-react";
 import EnquiryForm from "@/components/EnquiryForm";
+import { imagekitBaseUrl } from "@/config";
 
 const images = [
-  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+  `${imagekitBaseUrl}/shoot-1/SOL_2227.JPG?tr=w-1200,h-800,fo-auto,q-80`,
+  `${imagekitBaseUrl}/shoot-1/SOL_2164.JPG?tr=w-1200,h-800,fo-auto,q-80`,
+  `${imagekitBaseUrl}/shoot-1/SOL_2336.JPG?tr=w-1200,h-800,fo-auto,q-80`,
+  `${imagekitBaseUrl}/shoot-1/SOL_2361.JPG?tr=w-1200,h-800,fo-auto,q-80`,
 ];
 
 export function VillaDetail() {
@@ -124,27 +123,27 @@ export function VillaDetail() {
             {
               title: "The Living Hall",
               desc: "Two spacious air-conditioned halls with 3 sofa sets, 2 Smart TVs, and a balcony that looks directly over the pool. The kind of room you never want to leave.",
-              img: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+              img: `${imagekitBaseUrl}/shoot-1/SOL_2030.JPG?tr=w-1200,h-800,fo-auto,q-80`,
             },
             {
               title: "The Kitchen & Dining",
               desc: "Fully equipped with a fridge, microwave, gas stove, water purifier, and everything you need to cook or simply make your morning coffee. The dining balcony faces the pool.",
-              img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+              img: `${imagekitBaseUrl}/shoot-1/SOL_2289.JPG?tr=w-1200,h-800,fo-auto,q-80`,
             },
             {
               title: "The Bedrooms",
               desc: "Two generous bedrooms with attached bathrooms - one featuring a full bathtub for when you want to truly slow down. Air-conditioned, ceiling fans, quality linen throughout.",
-              img: "https://images.unsplash.com/photo-1522771731478-44eb10e5c776?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+              img: `${imagekitBaseUrl}/shoot-1/SOL_2135.JPG?tr=w-1200,h-800,fo-auto,q-80`,
             },
             {
               title: "The Balconies",
               desc: "Four balconies, four different moods. Pool, valley, partial sea - each one a reason to wake up early.",
-              img: "https://images.unsplash.com/photo-1502672260266-1c1c24240f38?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+              img: `${imagekitBaseUrl}/shoot-1/SOL_2174.JPG?tr=w-1200,h-800,fo-auto,q-80`,
             },
             {
               title: "The Garage",
               desc: "Covered parking for your vehicle, because arriving in Goa often means having a car.",
-              img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80",
+              img: `${imagekitBaseUrl}/shoot-1/SOL_2368.JPG?tr=w-1200,h-800,fo-auto,q-80`,
             },
           ].map((space, i) => (
             <div
@@ -274,87 +273,6 @@ export function VillaDetail() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Section 3.5 - The Views */}
-      <section className="bg-brand-surface py-20 md:py-28 px-5 md:px-10 xl:px-20">
-        <div className="max-w-7xl mx-auto">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
-            className="mb-16 text-center max-w-3xl mx-auto"
-          >
-            <div className="flex items-center justify-center gap-4 mb-4">
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="h-px w-12 bg-brand-rule origin-left"
-              />
-              <span className="text-xs font-semibold uppercase tracking-widest text-brand-muted">
-                Every Balcony, A Different World
-              </span>
-              <motion.div
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="h-px w-12 bg-brand-rule origin-right"
-              />
-            </div>
-            <h2 className="text-4xl xl:text-5xl font-bold leading-tight mb-6">
-              The Views
-            </h2>
-            <p className="text-lg text-brand-mid leading-relaxed">
-              Porvorim sits where the hills meet the sea. From the balconies of
-              Familia Furtado, you'll catch all three.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          >
-            {[
-              {
-                img: "https://images.unsplash.com/photo-1543489822-c49534f3271f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                label: "Pool View",
-              },
-              {
-                img: "https://images.unsplash.com/photo-1518182170546-076616fdca44?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                label: "Valley View",
-              },
-              {
-                img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                label: "Partial Sea View",
-              },
-            ].map((view, i) => (
-              <motion.div
-                key={i}
-                variants={fadeUp}
-                className="relative rounded-2xl overflow-hidden aspect-[4/5]"
-              >
-                <img
-                  src={view.img}
-                  alt={view.label}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6">
-                  <h3 className="text-white font-semibold text-xl">
-                    {view.label}
-                  </h3>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
         </div>
       </section>
 
