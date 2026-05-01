@@ -10,12 +10,14 @@ import { Stats } from "./Stats";
 import { TheExperience } from "./TheExperience";
 import Location from "./Location";
 import CTA from "./CTA";
+import ImageCarousel from "./ImageCarousel";
 
 export function Home() {
   return (
     <PageTransition>
       <Hero />
       <WhoAreWe />
+      <ImageCarousel />
       <CuratedExperiences />
       <ShortBanner />
       <TheVillas />
