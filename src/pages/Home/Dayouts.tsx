@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { slideLeft, slideRight } from "@/lib/animations";
 import { Button } from "@/components/ui/button";
 import { imagekitBaseUrl } from "@/config";
+import EnquiryFormDialog from "@/components/EnquiryFormDialog";
 
 const images = [
   "shoot-1/SOL_2254.JPG",
@@ -48,13 +49,9 @@ function Dayouts() {
               escape.
             </p>
           </div>
-          <Button
-            to="/contact?subject=Event%20Enquiry"
-            variant="primary"
-            className="border-none rounded-md px-8 py-3.5 text-base font-medium text-white hover:text-white"
-          >
-            Book Now
-          </Button>
+          <EnquiryFormDialog>
+            <Button variant="primary">Book Now &rarr;</Button>
+          </EnquiryFormDialog>
         </motion.div>
 
         <motion.div
