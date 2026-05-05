@@ -8,6 +8,26 @@ import { imagekitBaseUrl } from "@/config";
 import { shuffleArray } from "@/lib/utils";
 
 const galleryImages = [
+  { src: "/shoot-1/SOL_2032.JPG", category: "interiors" },
+  { src: "/shoot-1/SOL_2221.JPG", category: "pool" },
+  { src: "/shoot-1/SOL_2276.JPG", category: "exteriors" },
+  { src: "/shoot-1/SOL_2311.JPG", category: "exteriors" },
+  { src: "/shoot-1/SOL_2366.JPG", category: "outdoors" },
+  { src: "/shoot-1/SOL_2272.JPG", category: "exteriors" },
+  { src: "/shoot-1/SOL_2230.JPG", category: "outdoors" },
+  { src: "/shoot-1/SOL_2360.JPG", category: "deck" },
+  { src: "/shoot-1/SOL_2164.JPG", category: "exteriors" },
+  { src: "/shoot-1/SOL_2308.JPG", category: "exteriors" },
+  { src: "/shoot-1/SOL_2146.JPG", category: "exteriors" },
+  { src: "/shoot-1/SOL_2073.JPG", category: "interiors" },
+  { src: "/shoot-1/SOL_2028.JPG", category: "interiors" },
+  { src: "/shoot-1/SOL_2263.JPG", category: "interiors" },
+  { src: "/shoot-1/SOL_2021.JPG", category: "interiors" },
+  { src: "/shoot-1/SOL_2288.JPG", category: "interiors" },
+  { src: "/shoot-1/SOL_2275.JPG", category: "exteriors" },
+  { src: "/shoot-1/SOL_2204.JPG", category: "outdoors" },
+  { src: "/shoot-1/SOL_2256.JPG", category: "pool" },
+
   { src: "IMG_1261.JPG", category: "deck" },
   { src: "IMG_1259.JPG", category: "deck" },
 
@@ -17,7 +37,6 @@ const galleryImages = [
   { src: "IMG_1247.JPG", category: "pool" },
   { src: "IMG_1248.JPG", category: "pool" },
   { src: "IMG_1198.JPG", category: "pool" },
-  { src: "IMG_1243.JPG", category: "pool" },
   { src: "IMG_1230.JPG", category: "pool" },
   { src: "IMG_1225.JPG", category: "pool" },
   { src: "IMG_1238.JPG", category: "pool" },
