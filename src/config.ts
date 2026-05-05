@@ -1,13 +1,12 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 
-export const imagekitBaseUrl = "https://ik.imagekit.io/devific/furtado/";
-export const airbnbUrl = "https://www.airbnb.com/rooms/1437442770574789813";
-export const bookingDotComUrl =
-  "https://www.booking.com/hotel/in/familia-furtado.en-gb.html";
+export const imagekitBaseUrl = import.meta.env.VITE_IMAGEKIT_BASE_URL;
+export const airbnbUrl = import.meta.env.VITE_AIRBNB_URL;
+export const bookingDotComUrl = import.meta.env.VITE_BOOKING_URL;
 
-export const phoneNumber = "+919822121091";
-export const emailAddress = "furtadoshospitality@gmail.com";
+export const phoneNumber = import.meta.env.VITE_PHONE_NUMBER;
+export const emailAddress = import.meta.env.VITE_EMAIL_ADDRESS;
 
 export const faqs = [
   {
