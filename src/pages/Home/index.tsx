@@ -11,6 +11,8 @@ import { TheExperience } from "./TheExperience";
 import Location from "./Location";
 import CTA from "./CTA";
 import ImageCarousel from "./ImageCarousel";
+import Dayouts from "./Dayouts";
+import Reviews from "./Reviews";
 
 export function Home() {
   return (
@@ -24,7 +26,9 @@ export function Home() {
       <Parallax />
       <Stats />
       <TheExperience />
+      <Dayouts />
       <Location />
+      <Reviews />
       <CTA />
     </PageTransition>
   );

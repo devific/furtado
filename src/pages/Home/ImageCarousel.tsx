@@ -6,6 +6,7 @@ import { imagekitBaseUrl } from "@/config";
 
 const images = [
   "shoot-1/SOL_2144.JPG",
+  "shoot-1/SOL_2204.JPG",
   "shoot-1/SOL_2256.JPG",
   "shoot-1/SOL_2032.JPG",
   "shoot-1/SOL_2251.JPG",
@@ -14,6 +15,7 @@ const images = [
   "shoot-1/SOL_2174.JPG",
   "shoot-1/SOL_2034.JPG",
   "shoot-1/SOL_2289.JPG",
+  "shoot-1/SOL_2252.JPG",
 ];
 
 export default function ImageCarousel() {
@@ -71,7 +73,7 @@ export default function ImageCarousel() {
 
   return (
     <div className=" overflow-hidden bg-white">
-      <main className="max-w-7xl mx-auto px-6 py-16 overflow-hidden">
+      <main className="max-w-7xl mx-auto px-6 py-4 lg:py-16 overflow-hidden">
         <motion.div
           className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] flex justify-center items-center cursor-grab active:cursor-grabbing"
           style={{ perspective: "1200px", transformStyle: "preserve-3d" }}
@@ -130,7 +132,7 @@ export default function ImageCarousel() {
             return (
               <motion.div
                 key={i}
-                className="absolute w-[260px] md:w-[360px] lg:w-[460px] aspect-[4/5] overflow-hidden cursor-pointer shadow-2xl"
+                className="absolute w-65 md:w-90 lg:w-115 aspect-4/5 lg:aspect-4/3  overflow-hidden cursor-pointer shadow-2xl"
                 initial={false}
                 animate={{
                   x,
@@ -148,9 +150,9 @@ export default function ImageCarousel() {
                 }}
               >
                 <img
-                  src={`${imagekitBaseUrl}/${img}/tr:w-600,h-800,fo-auto,q-80,tr:fl-h`}
-                  alt={`Luxury furniture ${i + 1}`}
-                  className="w-full h-full object-cover pointer-events-none"
+                  src={`${imagekitBaseUrl}/${img}/tr:w-900,h-500,fo-auto,q-80,tr:fl-h`}
+                  alt={`${i + 1}`}
+                  className=" pointer-events-none object-cover w-full h-full"
                   referrerPolicy="no-referrer"
                 />
                 <motion.div
