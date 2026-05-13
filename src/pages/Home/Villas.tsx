@@ -47,7 +47,7 @@ export function TheVillas() {
           >
             <VillaCard
               {...villaData[0]}
-              imageSrc={`${imagekitBaseUrl}/${villaData[0].image}?tr=w-800,h-600,fo-auto,q-80`}
+              imageSrc={`${imagekitBaseUrl}/${villaData[0].image}?tr=w-800,fo-auto,q-80`}
             />
           </motion.div>
           <motion.div
@@ -58,7 +58,7 @@ export function TheVillas() {
           >
             <VillaCard
               {...villaData[1]}
-              imageSrc={`${imagekitBaseUrl}/${villaData[1].image}?tr=w-800,h-600,fo-auto,q-80`}
+              imageSrc={`${imagekitBaseUrl}/${villaData[1].image}?tr=w-800,fo-auto,q-80`}
             />
           </motion.div>
         </div>

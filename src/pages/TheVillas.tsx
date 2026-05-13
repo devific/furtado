@@ -67,11 +67,11 @@ export function TheVillas() {
               viewport={{ once: true }}
               className="flex flex-col"
             >
-              <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-8">
+              <div className="rounded-2xl overflow-hidden aspect-[4/3] mb-8 flex flex-col">
                 <motion.img
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.5 }}
-                  src={`${imagekitBaseUrl}/${villaData[index].image}?tr=w-800,h-600,fo-auto,q-80`}
+                  src={`${imagekitBaseUrl}/${villaData[index].image}?tr=w-800,fo-auto,q-80`}
                   alt={villa.name}
                   className="w-full h-full object-cover"
                 />
