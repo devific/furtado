@@ -116,7 +116,6 @@ export const sharedAmenities = {
     onSite: "Caretaker couple on-site at all times",
     chefAvailable: true,
     chefNote: "Private chef available at extra cost",
-    housekeeping: "Daily",
     villaManager: true,
     managerNote: "Dedicated point of contact throughout your stay",
   },

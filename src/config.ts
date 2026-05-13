@@ -18,10 +18,6 @@ export const faqs = [
     a: "Absolutely. The outdoor spaces are well-suited for private celebrations, small weddings, and milestone events. Let us know in advance so we can prepare.",
   },
   {
-    q: "Is a private chef included in the price?",
-    a: "The villa rate includes daily housekeeping and on-site caretaker service. A private chef is available at an additional cost - just ask when you book.",
-  },
-  {
     q: "What is the check-in and check-out time?",
     a: "Standard check-in is at 2:00 PM and check-out is at 11:00 AM. Early/late options can be arranged subject to availability.",
   },

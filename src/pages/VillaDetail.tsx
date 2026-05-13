@@ -103,7 +103,6 @@ export function VillaDetail() {
               `${villa.balconies} Balconies`,
               villa.size,
               "Pool Access",
-              "Daily Housekeeping",
             ].map((spec, i) => (
               <div
                 key={i}
@@ -242,7 +241,6 @@ export function VillaDetail() {
               {
                 title: "Service",
                 items: [
-                  "Daily Housekeeping",
                   "Caretaker On-Site",
                   "Private Chef (on request)",
                   "Villa Manager Contact",

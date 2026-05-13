@@ -206,7 +206,6 @@ export function TheVillas() {
               { icon: Utensils, label: "Outdoor Dining" },
               { icon: Flame, label: "BBQ Setup" },
               { icon: Users, label: "Caretaker On-Site" },
-              { icon: Sparkles, label: "Daily Housekeeping" },
               { icon: ShieldCheck, label: "CCTV Security" },
             ].map((item, i) => (
               <motion.div
