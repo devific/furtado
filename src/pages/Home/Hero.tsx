@@ -107,7 +107,7 @@ export function Hero() {
         >
           <div className="absolute inset-0 bg-blue-500/20 blur-[100px] rounded-full scale-75" />
           <motion.img
-            src={`${imagekitBaseUrl}/ai/hero.png`}
+            src={`${imagekitBaseUrl}/ai/hero.png?updatedAt=1778649675804&tr=w-800,h-600,fo-auto`}
             alt="Luxury Villa"
             className="relative z-10 w-full h-auto drop-shadow-2xl max-lg:max-w-[500px]"
             animate={{
