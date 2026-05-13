@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export function Parallax() {
   return (
     <ParallaxSection
-      imageSrc={`${imagekitBaseUrl}/shoot-1/SOL_2221.JPG?tr=w-1200,h-700,fo-auto,q-80,tr:fl-h`}
+      imageSrc={`${imagekitBaseUrl}/shoot-1/SOL_2221.JPG?tr=w-1500,fo-auto,q-80,tr:fl-h`}
       className="min-h-[70vh] flex items-end"
     >
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
