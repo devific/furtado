@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import EnquiryFormDialog from "../EnquiryFormDialog";
+import { imagekitBaseUrl } from "@/config";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,6 +42,10 @@ export function Navbar() {
 
   const isTransparent = isHome && !scrolled && !mobileMenuOpen;
 
+  const logoSrc = isTransparent
+    ? `${imagekitBaseUrl}/logo-white.png?tr=h-50`
+    : `${imagekitBaseUrl}/logo.png?tr=h-50`;
+
   return (
     <>
       <motion.nav
@@ -62,9 +67,7 @@ export function Navbar() {
               isTransparent ? "text-white" : "text-brand-black",
             )}
           >
-            <span className="font-bold text-lg sm:text-xl lg:text-2xl tracking-tight">
-              Furtado's Hospitality
-            </span>
+            <img src={logoSrc} alt="Furtado's Hospitality" className="h-12" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -114,7 +117,7 @@ export function Navbar() {
             </EnquiryFormDialog>
           </div>
 
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 items-center lg:hidden">
             {/* Mobile CTA */}
 
             <EnquiryFormDialog>
