@@ -6,8 +6,12 @@ import {
   goibiboUrl,
   emailAddress,
   phoneNumber,
+  facebookUrl,
+  instagramUrl,
+  imagekitBaseUrl,
 } from "@/config";
 import { Link } from "react-router-dom";
+import { SiInstagram, SiFacebook } from "@icons-pack/react-simple-icons";
 
 const sites = [
   {
@@ -32,22 +36,45 @@ const sites = [
   },
 ];
 
+const socials = [
+  {
+    name: "Instagram",
+    url: instagramUrl,
+    icon: SiInstagram,
+  },
+  {
+    name: "Facebook",
+    url: facebookUrl,
+    icon: SiFacebook,
+  },
+];
+
 export function Footer() {
   return (
     <footer className="bg-brand-black pt-16 pb-10 px-5 md:px-10 xl:px-20">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
           {/* Col 1 */}
-          <div>
-            <div className="flex items-center gap-1 text-white mb-2">
-              <span className="font-bold text-xl">Furtado's Hospitality</span>
+          <div className="flex flex-col max-md:items-center gap-8">
+            <img
+              src={imagekitBaseUrl + "/logo-white.png"}
+              alt="Furtado's Hospitality"
+              className="h-20 opacity-50 w-fit"
+            />
+            <div className="mt-auto flex items-center gap-2">
+              {socials.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 hover:text-white transition-colors mr-4 flex gap-2"
+                >
+                  <social.icon size={24} />
+                  <span className="sr-only">{social.name}</span>
+                </a>
+              ))}
             </div>
-            <p className="text-white/50 text-sm mt-2">
-              Your Private Goa, Finally.
-            </p>
-            <p className="text-white/40 text-xs mt-1">
-              Porvorim, North Goa, India
-            </p>
           </div>
 
           {/* Col 2 */}

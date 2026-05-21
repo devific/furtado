@@ -12,6 +12,9 @@ export const goibiboUrl = import.meta.env.VITE_GOIBIBO_URL;
 export const phoneNumber = import.meta.env.VITE_PHONE_NUMBER;
 export const emailAddress = import.meta.env.VITE_EMAIL_ADDRESS;
 
+export const facebookUrl = import.meta.env.VITE_FACEBOOK_URL;
+export const instagramUrl = import.meta.env.VITE_INSTAGRAM_URL;
+
 export const faqs = [
   {
     q: "Is the pool shared between both villas?",
