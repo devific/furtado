@@ -1,10 +1,36 @@
 import {
   airbnbUrl,
   bookingDotComUrl,
+  agodaUrl,
+  mmtUrl,
+  goibiboUrl,
   emailAddress,
   phoneNumber,
 } from "@/config";
 import { Link } from "react-router-dom";
+
+const sites = [
+  {
+    name: "Airbnb",
+    url: airbnbUrl,
+  },
+  {
+    name: "Booking.com",
+    url: bookingDotComUrl,
+  },
+  {
+    name: "Agoda",
+    url: agodaUrl,
+  },
+  {
+    name: "Make My Trip",
+    url: mmtUrl,
+  },
+  {
+    name: "Goibibo",
+    url: goibiboUrl,
+  },
+];
 
 export function Footer() {
   return (
@@ -67,9 +93,6 @@ export function Footer() {
                   {emailAddress}
                 </a>
               </li>
-              <li className="text-white/40 text-xs mt-4">
-                Available year-round
-              </li>
             </ul>
           </div>
 
@@ -77,36 +100,25 @@ export function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Also available on</h4>
             <ul className="space-y-2">
-              <li>
-                <a
-                  href={airbnbUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/60 hover:text-white text-sm transition-colors underline"
-                >
-                  Airbnb
-                </a>
-              </li>
-              <li>
-                <a
-                  href={bookingDotComUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/60 hover:text-white text-sm transition-colors underline"
-                >
-                  Booking.com
-                </a>
-              </li>
-              <li className="text-white/40 text-xs mt-4">
-                Direct bookings get priority response
-              </li>
+              {sites.map((site) => (
+                <li key={site.name}>
+                  <a
+                    href={site.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white/60 hover:text-white text-sm transition-colors"
+                  >
+                    {site.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-white/50 text-xs">
-            © {new Date().getFullYear()} Furtado's Hospitality. All rights
+            &copy; {new Date().getFullYear()} Furtado's Hospitality. All rights
             reserved.
           </p>
           <div className="flex gap-4">

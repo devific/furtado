@@ -2,8 +2,12 @@ import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 
 export const imagekitBaseUrl = import.meta.env.VITE_IMAGEKIT_BASE_URL;
+
 export const airbnbUrl = import.meta.env.VITE_AIRBNB_URL;
 export const bookingDotComUrl = import.meta.env.VITE_BOOKING_URL;
+export const agodaUrl = import.meta.env.VITE_AGODA_URL;
+export const mmtUrl = import.meta.env.VITE_MMT_URL;
+export const goibiboUrl = import.meta.env.VITE_GOIBIBO_URL;
 
 export const phoneNumber = import.meta.env.VITE_PHONE_NUMBER;
 export const emailAddress = import.meta.env.VITE_EMAIL_ADDRESS;
