@@ -150,56 +150,80 @@ export function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 bg-white pt-24 px-5 pb-10 flex flex-col"
-          >
+          <>
             <motion.div
-              variants={{
-                hidden: {},
-                visible: { transition: { staggerChildren: 0.1 } },
-              }}
-              initial="hidden"
-              animate="visible"
-              className="flex flex-col gap-6 text-2xl font-bold"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            <motion.div
+              initial={{ x: "-100%", opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: "-100%", opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="fixed left-0 top-0 z-40 h-screen w-full max-w-sm bg-gradient-to-b from-white to-gray-50 pt-24 px-6 pb-10 flex flex-col shadow-2xl"
             >
-              {navLinks.map((link) => {
-                const active = isActive(link.path);
+              <motion.div
+                variants={{
+                  hidden: {},
+                  visible: {
+                    transition: { staggerChildren: 0.08, delayChildren: 0.1 },
+                  },
+                }}
+                initial="hidden"
+                animate="visible"
+                className="flex flex-col gap-2"
+              >
+                {navLinks.map((link) => {
+                  const active = isActive(link.path);
 
-                return (
-                  <motion.div
-                    key={link.name}
-                    variants={{
-                      hidden: { opacity: 0, x: -20 },
-                      visible: { opacity: 1, x: 0 },
-                    }}
-                  >
-                    <Link
-                      to={link.path}
-                      className={cn(
-                        "block",
-                        active
-                          ? "text-brand-accent"
-                          : "text-brand-black hover:text-brand-accent",
-                      )}
+                  return (
+                    <motion.div
+                      key={link.name}
+                      variants={{
+                        hidden: { opacity: 0, x: -30 },
+                        visible: { opacity: 1, x: 0 },
+                      }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 10,
+                      }}
                     >
-                      {link.name}
-                    </Link>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
+                      <Link
+                        to={link.path}
+                        className={cn(
+                          "block px-4 py-3 rounded-lg text-lg font-semibold transition-all duration-200",
+                          active
+                            ? "text-brand-accent bg-brand-accent/10"
+                            : "text-brand-black hover:text-brand-accent hover:bg-brand-accent/5",
+                        )}
+                      >
+                        {link.name}
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </motion.div>
 
-            <div className="mt-auto ">
-              <EnquiryFormDialog>
-                <Button className="rounded-full px-6 py-2.5 text-sm font-medium cursor-pointer w-full">
-                  Plan Your Stay →
-                </Button>
-              </EnquiryFormDialog>
-            </div>
-          </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="mt-auto pt-6"
+              >
+                <div className="border-t border-gray-200 pt-6 mb-4" />
+                <EnquiryFormDialog>
+                  <Button className="rounded-full px-6 py-3 text-sm font-medium cursor-pointer w-full bg-brand-accent hover:bg-brand-accent/90 text-white">
+                    Plan Your Stay →
+                  </Button>
+                </EnquiryFormDialog>
+              </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
