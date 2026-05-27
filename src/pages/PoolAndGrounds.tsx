@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Seo } from "@/components/Seo";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import { ParallaxSection } from "@/components/ui/ParallaxSection";
 import { PageTransition } from "@/components/layout/PageTransition";
@@ -14,6 +15,10 @@ import { imagekitBaseUrl } from "@/config";
 export function PoolAndGrounds() {
   return (
     <PageTransition>
+      <Seo
+        title="The Pool & Grounds | Furtado - Luxury Amenities"
+        description="Discover our stunning 14m pool, landscaped gardens, and world-class outdoor amenities. Perfect for relaxation and entertainment."
+      />
       {/* Section 4.1 - Page Hero */}
       <ParallaxSection
         imageSrc={`${imagekitBaseUrl}/IMG_1247.JPG?tr=w-1200,h-700,fo-auto,q-80`}

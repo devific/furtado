@@ -1,8 +1,8 @@
 export const villaData = [
   {
     id: "villa-one",
-    name: "Familia Furtado - Villa One",
-    shortName: "Villa One",
+    name: "Villa 1",
+    shortName: "Villa 1",
     tagline: "Where the valley meets the sea.",
     bedrooms: 2,
     bathrooms: 3,
@@ -46,8 +46,8 @@ export const villaData = [
   },
   {
     id: "villa-two",
-    name: "Familia Furtado - Villa Two",
-    shortName: "Villa Two",
+    name: "Villa 2",
+    shortName: "Villa 2",
     tagline: "Your own corner of paradise.",
     bedrooms: 2,
     bathrooms: 3,

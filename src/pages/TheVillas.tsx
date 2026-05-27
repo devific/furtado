@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Seo } from "@/components/Seo";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import { Button } from "@/components/ui/button";
 import { ParallaxSection } from "@/components/ui/ParallaxSection";
@@ -29,6 +30,10 @@ import { Link } from "react-router-dom";
 export function TheVillas() {
   return (
     <PageTransition>
+      <Seo
+        title="The Villas | Furtado - Luxury Villa Rentals in Goa"
+        description="Explore our two private luxury villas in Goa. Book individually or rent both for the ultimate family vacation or group celebration."
+      />
       {/* Section 2.1 - Page Hero */}
       <ParallaxSection
         imageSrc={`${imagekitBaseUrl}/IMG_1286.JPG?tr=w-1200,h-700,fo-auto,q-80`}

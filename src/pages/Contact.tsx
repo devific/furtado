@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Seo } from "@/components/Seo";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import { PageTransition } from "@/components/layout/PageTransition";
 import {
@@ -18,6 +19,10 @@ export function Contact() {
 
   return (
     <PageTransition>
+      <Seo
+        title="Contact Us | Furtado - Get in Touch"
+        description="Reach out to book your luxury villa vacation in Goa. We respond personally within hours. Direct contact for personalized service."
+      />
       {/* Section 7.1 - Page Hero */}
       <section className="bg-brand-black pt-32 pb-16 px-5 text-center">
         <AnimatedHeading

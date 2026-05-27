@@ -138,8 +138,8 @@ export const schema = z
 type FormData = z.infer<typeof schema>;
 
 const villaOptions = [
-  { value: "villa-one", label: "Villa One" },
-  { value: "villa-two", label: "Villa Two" },
+  { value: "villa-one", label: "Villa 1" },
+  { value: "villa-two", label: "Villa 2" },
   { value: "both", label: "Both Villas (Full Estate)" },
   { value: "unsure", label: "Not Sure" },
 ];

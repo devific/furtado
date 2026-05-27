@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
+import { Seo } from "@/components/Seo";
 import { PageTransition } from "@/components/layout/PageTransition";
 import {
   fadeUp,
@@ -42,6 +43,10 @@ export function VillaDetail() {
 
   return (
     <PageTransition>
+      <Seo
+        title={`${villa.name} | Furtado - Luxury Villa in Goa`}
+        description={`${villa.name} - ${villa.bedrooms} bedroom luxury villa in Goa. Sleeps ${villa.maxOccupancy} guests with world-class amenities and stunning views.`}
+      />
       {/* Section 3.1 - Gallery Hero */}
       <section className="relative w-full h-[60vh] md:h-[70vh] pt-16 overflow-hidden bg-brand-black">
         <AnimatePresence initial={false}>

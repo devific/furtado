@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Seo } from "@/components/Seo";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import { ParallaxSection } from "@/components/ui/ParallaxSection";
 import { PageTransition } from "@/components/layout/PageTransition";
@@ -19,6 +20,10 @@ import EnquiryFormDialog from "@/components/EnquiryFormDialog";
 export function Explore() {
   return (
     <PageTransition>
+      <Seo
+        title="Explore Experiences | Furtado - Activities & Local Attractions"
+        description="Curated local experiences and activities in Goa. From water sports to culinary adventures, discover what makes Goa unforgettable."
+      />
       {/* Section 5.1 - Page Hero */}
       <ParallaxSection
         imageSrc="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"

@@ -1,10 +1,15 @@
 import { PageTransition } from "@/components/layout/PageTransition";
+import { Seo } from "@/components/Seo";
 import { motion } from "motion/react";
 import { fadeUp } from "../lib/animations";
 
 export function Privacy() {
   return (
     <PageTransition>
+      <Seo
+        title="Privacy Policy | Furtado"
+        description="Learn how Furtado collects, uses, and protects your personal information. Our commitment to your privacy and data security."
+      />
       <section className="bg-brand-black pt-32 pb-16 px-5 text-center">
         <motion.h1
           variants={fadeUp}

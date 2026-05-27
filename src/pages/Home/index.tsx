@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Seo } from "@/components/Seo";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { Hero } from "./Hero";
 import { WhoAreWe } from "./WhoAreWe";
@@ -17,6 +18,7 @@ import Reviews from "./Reviews";
 export function Home() {
   return (
     <PageTransition>
+      <Seo />
       <Hero />
       <WhoAreWe />
       <ImageCarousel />

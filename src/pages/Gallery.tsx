@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Seo } from "@/components/Seo";
 import { AnimatedHeading } from "@/components/ui/AnimatedHeading";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { fadeUp, staggerContainer, scaleUp } from "../lib/animations";
@@ -136,6 +137,10 @@ export function Gallery() {
 
   return (
     <PageTransition>
+      <Seo
+        title="Gallery | Furtado - Luxury Villa Photos"
+        description="Browse stunning photos of our luxury villas in Goa. Explore interiors, exteriors, pool, and amenities in our complete photo gallery."
+      />
       {/* Section 6.1 - Page Hero */}
       <section className="bg-brand-black pt-32 pb-16 px-5 text-center">
         <AnimatedHeading

@@ -1,10 +1,15 @@
 import { PageTransition } from "@/components/layout/PageTransition";
+import { Seo } from "@/components/Seo";
 import { motion } from "motion/react";
 import { fadeUp } from "../lib/animations";
 
 export function Terms() {
   return (
     <PageTransition>
+      <Seo
+        title="Terms of Service | Furtado"
+        description="Read our terms of service to understand the rules, rights, and responsibilities for booking and staying at Furtado luxury villas."
+      />
       <section className="bg-brand-black pt-32 pb-16 px-5 text-center">
         <motion.h1
           variants={fadeUp}
