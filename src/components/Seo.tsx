@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { siteUrl } from "../config";
 
 interface SeoProps {
   title?: string;
@@ -8,10 +9,10 @@ interface SeoProps {
   ogType?: string;
 }
 
-const DEFAULT_TITLE = "Furtado - Luxury Villa Rentals";
+const DEFAULT_TITLE = "Familia Furtado - Luxury Villas in Goa";
 const DEFAULT_DESCRIPTION =
-  "Experience luxury villas with world-class amenities, pristine locations, and unforgettable experiences.";
-const DEFAULT_OG_IMAGE = "/og-image.jpg";
+  "Experience luxury villas in Goa with world-class amenities, pristine locations, and unforgettable experiences.";
+const DEFAULT_OG_IMAGE = `${siteUrl}/og-image.jpg`;
 const DEFAULT_OG_TYPE = "website";
 
 export function Seo({

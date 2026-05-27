@@ -1,6 +1,8 @@
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 
+export const siteUrl =
+  import.meta.env.VITE_SITE_URL || "https://furtadoshospitality.com";
 export const imagekitBaseUrl = import.meta.env.VITE_IMAGEKIT_BASE_URL;
 
 export const airbnbUrl = import.meta.env.VITE_AIRBNB_URL;
