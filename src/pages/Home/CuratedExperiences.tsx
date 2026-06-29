@@ -41,7 +41,7 @@ export function CuratedExperiences() {
   const [expandedId, setExpandedId] = useState(1);
 
   return (
-    <section className="bg-white py-24 md:py-32 px-5">
+    <section className="bg-white pt-4 pb-16 px-5">
       <div className="max-w-7xl mx-auto px-5 md:px-10 xl:px-20 mb-12">
         <motion.div
           variants={fadeUp}

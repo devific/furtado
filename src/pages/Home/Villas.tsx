@@ -8,7 +8,7 @@ import EnquiryFormDialog from "@/components/EnquiryFormDialog";
 
 export function TheVillas() {
   return (
-    <section className="bg-white py-20 md:py-28 px-5 md:px-10 xl:px-20">
+    <section className="bg-white py-16 px-5 md:px-10 xl:px-20">
       <div className="max-w-7xl mx-auto">
         <motion.div
           variants={fadeUp}

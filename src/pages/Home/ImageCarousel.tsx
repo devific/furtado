@@ -73,7 +73,7 @@ export default function ImageCarousel() {
 
   return (
     <div className=" overflow-hidden bg-white">
-      <main className="max-w-7xl mx-auto px-6 py-4 lg:py-16 overflow-hidden">
+      <main className="max-w-7xl mx-auto px-6 py-4 overflow-hidden">
         <motion.div
           className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] flex justify-center items-center cursor-grab active:cursor-grabbing"
           style={{ perspective: "1200px", transformStyle: "preserve-3d" }}

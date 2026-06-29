@@ -14,12 +14,14 @@ import CTA from "./CTA";
 import ImageCarousel from "./ImageCarousel";
 import Dayouts from "./Dayouts";
 import Reviews from "./Reviews";
+import VideoCarouselSection from "./VideoCarousel";
 
 export function Home() {
   return (
     <PageTransition>
       <Seo />
       <Hero />
+      <VideoCarouselSection />
       <WhoAreWe />
       <ImageCarousel />
       <CuratedExperiences />

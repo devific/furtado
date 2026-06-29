@@ -3,7 +3,7 @@ import { slideLeft } from "@/lib/animations";
 
 export function WhoAreWe() {
   return (
-    <section className="bg-white pt-12 md:pt-16 px-5 md:px-10 overflow-hidden">
+    <section className="bg-white pt-4 px-5 md:px-10 overflow-hidden">
       <div className="max-w-[1200px] mx-auto space-y-16">
         {/* TEXT FULL WIDTH */}
         <motion.div
